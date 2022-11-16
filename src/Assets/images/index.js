@@ -9,6 +9,7 @@ export const generalImages = {
     SuccessProfile: require('./generalImages/SuccessProfile.png'),
     successChangPass: require('./generalImages/successChangPass.png'),
     cart: require('./generalImages/cart.png'),
+    logo: require('./generalImages/logo.png'),
 }
 
 export const generalIcons = {

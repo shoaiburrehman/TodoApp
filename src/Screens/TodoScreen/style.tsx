@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { colors } from '../../Utils/theme';
+import { appShadow, colors } from '../../Utils/theme';
 import { DEVICE_WIDTH, vh, vw } from '../../Utils/units';
 
 
@@ -49,19 +49,12 @@ export const Styles = StyleSheet.create({
         
     },
     subContainer: {
-      width: DEVICE_WIDTH-25,
+      marginHorizontal: vw * 5,
       padding: vh * 6,
-      marginTop: vh * 6,
+      marginVertical: vh * 2,
       borderRadius: vw * 3,
-      shadowColor: "#000",
-      shadowOffset: {
-          width: 0,
-          height: 1,
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 1,
-      elevation: 1,
       backgroundColor: colors.whiteColor,
+      ...appShadow
     },
     heading1: {
       letterSpacing: 0,
@@ -91,7 +84,6 @@ export const Styles = StyleSheet.create({
         position: 'absolute',
         right: 0,
         top: 0,
-        height: vh * 2.2,
         width: vw * 4,
     },
     btnImage: {
@@ -103,9 +95,16 @@ export const Styles = StyleSheet.create({
         flexDirection: 'row'
     },
     title: {
+        fontSize: vh * 2.6,
+        // fontWeight: 'bold',
         letterSpacing: 0,
         textAlign: "left",
         color: colors.textColor
+    },
+    descView: {
+        flexDirection: 'row', 
+        marginTop: vh,
+        justifyContent: 'center'
     },
     ViewSide: {
       position: 'absolute',
@@ -118,9 +117,9 @@ export const Styles = StyleSheet.create({
       color: colors.themeColor,
     },
     desc: {
-        height: vh * 4,
         textAlign: "left",
         color: colors.textColor,
+        fontSize: vh * 2.3
     },
     btnGradient: {
         marginTop: vh * 3.5,

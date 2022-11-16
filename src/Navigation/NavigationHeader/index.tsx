@@ -10,7 +10,7 @@ import {DrawerActions} from '@react-navigation/native';
 import {vw, vh} from '../../Utils/units';
 import styles from './styles';
 import MontBold from '../../Components/TextWrappers/MontBold';
-import {drawerIcons, drawerIconsWithoutSignIn, generalIcons, sampleImages} from '../../Assets/images';
+import {drawerIcons, drawerIconsWithoutSignIn, generalIcons, generalImages, sampleImages} from '../../Assets/images';
 import {colors} from '../../Utils/theme';
 import MontRegular from '../../Components/TextWrappers/MontRegular';
 
@@ -108,25 +108,16 @@ const showLeftButton = (activeRouteName, navigation, route) => {
       </TouchableOpacity>
     );
   }
-  if(activeRouteName === 'HomeScreen'){
+  if(activeRouteName === 'TodoScreen'){
     return(
-      <TouchableOpacity
+      <View
         style={styles.touchableMenu}
-        onPress={() => {
-          console.log('aaaaaa')
-          navigation.dispatch(DrawerActions.toggleDrawer());  
-        }}
       >
         <Image
-          source={generalIcons.menu}
-          style={[
-            styles.menuIcon,
-            {
-              marginLeft: vw,
-            },
-          ]}
+          source={generalImages.logo}
+          style={styles.menuIcon}
         />
-      </TouchableOpacity>
+      </View>
     )
   }
 

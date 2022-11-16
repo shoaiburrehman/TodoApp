@@ -29,13 +29,14 @@ export default StyleSheet.create({
     // left: 0,
   },
   touchableMenu: {
-    width: 11 * vw,
-    height: 4 * vh,
+    width: 9 * vw,
+    height: 9 * vw,
+    marginLeft: vw * 2,
     zIndex: 9999,
   },
   menuIcon: {
     width: 9 * vw,
-    height: 2.5 * vh,
+    height: 9 * vw,
     resizeMode: 'contain',
     zIndex: 9999,
   },
