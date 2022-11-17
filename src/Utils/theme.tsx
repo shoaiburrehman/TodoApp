@@ -3,6 +3,7 @@ export const colors = {
   white: '#FFFFFF',
   red: '#FF0000',
   gradientBtnColor: ['#009387', '#40b8ad'],
+  lightRed: '#FF4747',
   themeColor: '#009387',
   bgCartColor: '#EAEEF4',
   whiteColor: '#ffffff',

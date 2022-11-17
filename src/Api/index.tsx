@@ -45,6 +45,25 @@ export const get = async (queryParams) => {
   }
 };
 
+export const deleteTask = async (queryParams) => {
+  // const url = base_url + dataToQueryParameter(queryParams);
+  const url = base_url + '/' + queryParams;
+  console.log('URL GET', url);
+  const configs = getConfigs('DELETE');
+
+  try {
+    const networkResult = await performNetworkRequest(url, configs);
+    const result = await handleResponse(networkResult);
+
+    // console.log('ressssss', result);
+
+    return Promise.resolve(result);
+  } catch (e) {
+    const message = getMessage(e);
+    return Promise.reject(message);
+  }
+};
+
 export const put = async (body, formData, queryParams) => {
   const url = base_url + dataToQueryParameter(queryParams);
   const configs = getConfigs('PUT', body, formData);
@@ -62,5 +81,6 @@ const Api = {
   post: post,
   get: get,
   put: put,
+  delete: deleteTask,
 };
 export default Api;

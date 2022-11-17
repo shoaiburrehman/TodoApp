@@ -14,45 +14,6 @@ import {drawerIcons, drawerIconsWithoutSignIn, generalIcons, generalImages, samp
 import {colors} from '../../Utils/theme';
 import MontRegular from '../../Components/TextWrappers/MontRegular';
 
-export const drawerNotLoggedInRoutes = {
-  HomeNavigator: {
-    label: 'Home',
-    icon: drawerIconsWithoutSignIn.HomeNavigator,
-  },
-
-  AboutUsNavigator: {
-    label: 'About Us',
-    icon: drawerIconsWithoutSignIn.AboutUsNavigator,
-  },
-
-  ContactUsNavigator: {
-    label: 'Contact Us',
-    icon: drawerIconsWithoutSignIn.ContactUsNavigator,
-  },
-}
-
-export const drawerRoutes = {
-  WishlistNavigator: {
-    label: 'My Wishlist',
-    icon: drawerIcons.WishlistNavigator,
-  },
-
-  OrderNavigator: {
-    label: 'My Orders',
-    icon: drawerIcons.OrderNavigator,
-  },
-
-  PrivacyPoilicyScreen: {
-    label: 'Privacy Policy',
-    icon: drawerIcons.PrivacyPoilicyScreen,
-  },
-
-  TermsAndConditionsScreen: {
-    label: 'Terms & Condition',
-    icon: drawerIcons.TermsAndConditionsScreen,
-  },
-};
-
 const shouldHeaderBeShown = activeRouteName => {
   switch (activeRouteName) {
     default:
@@ -108,7 +69,7 @@ const showLeftButton = (activeRouteName, navigation, route) => {
       </TouchableOpacity>
     );
   }
-  if(activeRouteName === 'TodoScreen'){
+  if(activeRouteName === 'TodoScreen' || activeRouteName === 'Add Tasks'){
     return(
       <View
         style={styles.touchableMenu}

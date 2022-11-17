@@ -17,11 +17,12 @@ const Tab = createBottomTabNavigator();
 const tabOptions = {
     headerShown: false,
     activeTintColor: colors.themeColor,
+    tabBarHideOnKeyboard: true,
     labelStyle: {
         fontSize: 12,
         paddingBottom: 6,
     },
-    style: {        
+    style: {
         borderTopColor:  "transparent",
         shadowColor: colors.blackColor,
         shadowOffset: {
@@ -54,7 +55,7 @@ const BottomTabNavigator = () => (
                 tabBarActiveTintColor: colors.themeColor,
                 tabBarIcon: ({ focused }) => (
                     <Feather
-                        name="activity"
+                        name="list"
                         size={23}
                         color={focused ? colors.themeColor : "grey"}
                     />
@@ -84,7 +85,7 @@ const BottomTabNavigator = () => (
                 tabBarActiveTintColor: colors.themeColor,
                 tabBarIcon: ({ focused }) => (
                     <Feather
-                        name="bookmark"
+                        name="check-square"
                         size={23}
                         color={focused ? colors.themeColor : "grey"}
                     />
@@ -99,7 +100,7 @@ const BottomTabNavigator = () => (
                 tabBarActiveTintColor: colors.themeColor,
                 tabBarIcon: ({ focused }) => (
                     <Feather
-                        name="settings"
+                        name="file-minus"
                         size={23}
                         color={focused ? colors.themeColor : "grey"}
                     />
@@ -114,8 +115,8 @@ const BottomTabNavigator = () => (
                 tabBarActiveTintColor: colors.themeColor,
                 tabBarIcon: ({ focused }) => (
                     <Feather
-                        name="settings"
-                        size={26}
+                        name="file-plus"
+                        size={23}
                         color={focused ? colors.themeColor : "grey"}
                     />
                 ),

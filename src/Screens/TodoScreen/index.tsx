@@ -1,22 +1,20 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, ScrollView, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import * as Animatable from 'react-native-animatable';
-import { vh, vw } from '../../Utils/units';
 import { Styles } from './style';
 import { colors } from '../../Utils/theme';
 import { showToast } from '../../Api/HelperFunction';
-import { base_url } from '../../Api/configs';
-import { get } from '../../Api';
-import MontBold from '../../Components/TextWrappers/MontBold';
-import MontBook from '../../Components/TextWrappers/MontBook';
-import MontSemiBold from '../../Components/TextWrappers/MontSemiBold';
+import { deleteTask, get, post } from '../../Api';
 import MontHeavy from '../../Components/TextWrappers/MontHeavy';
 import MontRegular from '../../Components/TextWrappers/MontRegular';
+import MontExtraLight from '../../Components/TextWrappers/MontExtraLight';
+import AlertPopup from '../../Components/Popups/AlertPopup';
 
 const TodoScreen = ({navigation}) => {
-
-    const [task, setTask] = useState()
+    const [task, setTask] = useState();
+    const [taskID, setTaskID] = useState();
+    const alertPopupRef = useRef()
 
     useEffect(() => {  
         getTodo()
@@ -31,6 +29,34 @@ const TodoScreen = ({navigation}) => {
         }
     }
 
+    const deleteTodo = async(id) => {
+        console.log('id: ', id)
+        try {
+            const response = await deleteTask(id);
+            console.log('response: ', response)
+            // setTask(response)
+        } catch (error) {
+            showToast(error)
+        }
+    }
+
+    const createTodo = async() => {
+        let data = {
+            createdAt: 1667103624, 
+            deadline: "deadline 3", 
+            description: "description 3", 
+            id: "3", 
+            status: "status 3", 
+            title: "title 3"
+        }
+        try {
+            const response = await post(data);
+            console.log('response: ', response)
+        } catch (error) {
+            showToast(error)
+        }
+    }
+
     console.log('task: ', task)
     return (
         <View style={Styles.container}>
@@ -40,7 +66,7 @@ const TodoScreen = ({navigation}) => {
                     return(
                         <Animatable.View animation="fadeInLeft" duration={1000} iterationDelay={200 * index}>
                             <TouchableOpacity 
-                                // onLongPress={() => { onDeletePress(task.taskId, item.id) }} 
+                                onLongPress={() => {setTaskID(item?.id); alertPopupRef?.current?.show()}} 
                                 style={Styles.subContainer}
                             >
                                 <View style={Styles.row}>
@@ -52,17 +78,28 @@ const TodoScreen = ({navigation}) => {
                                         </View>
                                     </View>
                                     <TouchableOpacity 
-                                        // onPress={() => { onDeletePress(task.taskId, item.id) }} 
+                                        onPress={() => {setTaskID(item?.id); alertPopupRef?.current?.show()}} 
                                         style={Styles.imgEditPencil}
                                     >
                                         <Icon name="trash-outline" color={colors.themeColor} size={18.5}/>
                                     </TouchableOpacity>
+                                </View>
+                                <View style={Styles.deadlineView}>
+                                    <MontExtraLight style={Styles.deadlineTxt}>Deadline: {item?.deadline}</MontExtraLight>
                                 </View>
                             </TouchableOpacity>
                     </Animatable.View>
                     )  
                 }}
                 showsVerticalScrollIndicator={false}
+            />
+            <AlertPopup
+                reference={alertPopupRef}
+                title={'Delete Task'}
+                subTitle={'Are You Sure You Want To Delete This Task?'}
+                secondaryTitle={'No'}
+                primaryTitle={'Yes'}
+                onAccept={() => deleteTodo(taskID)}
             />
         </View>
     );

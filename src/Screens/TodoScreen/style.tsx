@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { appShadow, colors } from '../../Utils/theme';
-import { DEVICE_WIDTH, vh, vw } from '../../Utils/units';
+import { DEVICE_WIDTH, fontSizes, vh, vw } from '../../Utils/units';
 
 
 export const Styles = StyleSheet.create({
@@ -50,7 +50,7 @@ export const Styles = StyleSheet.create({
     },
     subContainer: {
       marginHorizontal: vw * 5,
-      padding: vh * 6,
+      padding: vh * 4,
       marginVertical: vh * 2,
       borderRadius: vw * 3,
       backgroundColor: colors.whiteColor,
@@ -180,6 +180,13 @@ export const Styles = StyleSheet.create({
       // borderWidth: 1,
       // backgroundColor: COLORS.bgColor,
     },
-  
+    deadlineView: {
+        alignSelf: 'flex-end',
+        marginTop: vh,
+    },
+    deadlineTxt: {
+        color: colors.grayColor,
+        fontSize: fontSizes.f12 * 1.1
+    }
   });
   
