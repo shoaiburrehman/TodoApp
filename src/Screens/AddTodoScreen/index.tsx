@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState, useRef, useLayoutEffect} from 'react';
 import {View, Image, Text} from 'react-native';
 import styles from './styles';
 import InputField from '../../Components/InputField';
@@ -6,13 +6,24 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { generalImages } from '../../Assets/images';
 import GradientButton from '../../Components/GradientButton';
 import ResponsePopup from '../../Components/Popups/ResponsePopup';
+import { renderHeaderTitle } from '../../Navigation/NavigationHeader';
 
-const AddTodoScreen = () => {
+const AddTodoScreen = (props) => {
+  let keyword = props?.route?.params?.keyword;
   const [name, setName] = useState('');
   const [email, setEmail] = useState( '');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const generalModalRef = useRef();
+
+  useLayoutEffect(() => {
+    if(keyword){
+        props.navigation.setOptions({
+            headerTitle: () => renderHeaderTitle(keyword),
+        });
+    }
+  }, [props.navigation, keyword]);
+
 
   const renderFields = () => {
     return (

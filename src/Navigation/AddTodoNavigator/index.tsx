@@ -11,7 +11,7 @@ const AddTodoNavigator = () => {
   return (
     <>
       <AddStack.Navigator>
-        <AddStack.Screen name="Add Tasks" component={AddTodoScreen} options={options} />
+        <AddStack.Screen name="Add Task" component={AddTodoScreen} options={options} />
       </AddStack.Navigator>
     </>
   );

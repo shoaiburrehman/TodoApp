@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { View, FlatList } from 'react-native';
+import { Styles } from './style';
 import { showToast } from '../../Api/HelperFunction';
 import { deleteTask, get, post } from '../../Api';
 import AlertPopup from '../../Components/Popups/AlertPopup';
 import TodoCard from '../../Components/TodoCard';
 import MainStyle from '../../Utils/mainStyle';
 
-const TodoDetailScreen = ({navigation}) => {
+const DoneTodoScreen = ({navigation}) => {
     const [task, setTask] = useState();
     const [taskID, setTaskID] = useState();
     const alertPopupRef = useRef()
@@ -78,4 +79,4 @@ const TodoDetailScreen = ({navigation}) => {
     );
 }
 
-export default TodoDetailScreen;
+export default DoneTodoScreen;

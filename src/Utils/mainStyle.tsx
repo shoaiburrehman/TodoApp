@@ -7,7 +7,12 @@ const MainStyle = StyleSheet.create({
     },
     themeColor: {
         color: colors.themeColor
-    }
+    },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },    
 })
 
 export default MainStyle;

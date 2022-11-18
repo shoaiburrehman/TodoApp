@@ -12,19 +12,6 @@ const styles = StyleSheet.create({
   subContainer: {
     flex: 1,
   },
-
-  contactImgView: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: vw * 7,
-  },
-
-  contactImg: {
-    width: vw * 70,
-    height: vw * 50,
-    resizeMode: 'contain',
-  },
-
   btn: {
     marginVertical: vh * 2.5,
     width: vw * 80,
@@ -39,34 +26,13 @@ const styles = StyleSheet.create({
       textAlign: "center",
       color: colors.white,
   },
-
-  content: {
-    alignItems: 'center',
-  },
-
-  scroll: {
-    flex: 1,
-  },
-
   fieldsView:{
     marginHorizontal: vw * 7,
     marginVertical: 3 * vh
   },
-
-  messageView:{
-    backgroundColor: 'red',
-  },
-
   textInputStyle: {
     height: vh * 17,
   },
-  sendButtonStyle:{
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-    width: 45 * vw,
-    marginTop: 5 * vh
-  }
 });
 
 export default styles;

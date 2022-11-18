@@ -6,7 +6,7 @@ import AlertPopup from '../../Components/Popups/AlertPopup';
 import TodoCard from '../../Components/TodoCard';
 import MainStyle from '../../Utils/mainStyle';
 
-const TodoDetailScreen = ({navigation}) => {
+const DoingTodoScreen = ({navigation}) => {
     const [task, setTask] = useState();
     const [taskID, setTaskID] = useState();
     const alertPopupRef = useRef()
@@ -78,4 +78,4 @@ const TodoDetailScreen = ({navigation}) => {
     );
 }
 
-export default TodoDetailScreen;
+export default DoingTodoScreen;

@@ -69,7 +69,7 @@ const showLeftButton = (activeRouteName, navigation, route) => {
       </TouchableOpacity>
     );
   }
-  if(activeRouteName === 'TodoScreen' || activeRouteName === 'Add Tasks'){
+  if(activeRouteName === 'TodoScreen' || activeRouteName === 'Add Task' ||activeRouteName === 'Edit Task' ){
     return(
       <View
         style={styles.touchableMenu}
@@ -190,7 +190,7 @@ const getHeaderStyle = activeRouteName => {
   return styles.headerStyle;
 };
 
-const renderHeaderTitle = (activeRouteName, props) => {
+export const renderHeaderTitle = (activeRouteName, props) => {
   return (
     <View style={styles.otherHeaderView}>
       <MontBold style={styles.headerText}>
