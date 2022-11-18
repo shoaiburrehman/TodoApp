@@ -23,6 +23,8 @@ import com.reactnativecommunity.netinfo.NetInfoPackage;
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 // @react-native-picker/picker
 import com.reactnativecommunity.picker.RNCPickerPackage;
+// react-native-date-picker
+import com.henninghall.date_picker.DatePickerPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-linear-gradient
@@ -82,6 +84,7 @@ public class PackageList {
       new NetInfoPackage(),
       new RNCMaskedViewPackage(),
       new RNCPickerPackage(),
+      new DatePickerPackage(),
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
       new SafeAreaContextPackage(),

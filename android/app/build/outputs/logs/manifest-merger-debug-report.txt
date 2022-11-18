@@ -14,6 +14,7 @@ MERGED from [:react-native-community_datetimepicker] F:\Study\CCRNAssessment\Tod
 MERGED from [:react-native-community_netinfo] F:\Study\CCRNAssessment\TodoApp\node_modules\@react-native-community\netinfo\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-12:12
 MERGED from [:react-native-masked-view_masked-view] F:\Study\CCRNAssessment\TodoApp\node_modules\@react-native-masked-view\masked-view\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-picker_picker] F:\Study\CCRNAssessment\TodoApp\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-date-picker] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-date-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-linear-gradient] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-linear-gradient\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -74,6 +75,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ESHOP\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\ESHOP\.gradle\caches\transforms-3\c5f7e926f38f52b0a9f87d57ff260610\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] C:\Users\ESHOP\.gradle\caches\transforms-3\4e5f2ec05243774aa7a6d3ac597ca78a\transformed\lifecycle-runtime-2.4.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ESHOP\.gradle\caches\transforms-3\264bfea9cec9553b72567ddd2a81a286\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.henninghall:numberpickerview:v1.1.5] C:\Users\ESHOP\.gradle\caches\transforms-3\9b30bb2ac9392326984e629bec4936dc\transformed\jetified-numberpickerview-v1.1.5\AndroidManifest.xml:2:1-11:12
+MERGED from [net.time4j:time4j-android:4.8-2021a] C:\Users\ESHOP\.gradle\caches\transforms-3\c19b4058e4af20c34268b7b0e48d5683\transformed\jetified-time4j-android-4.8-2021a\AndroidManifest.xml:2:1-13:12
 MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\ESHOP\.gradle\caches\transforms-3\fe525e62d2b9e85c0d777a0bb14f7298\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\ESHOP\.gradle\caches\transforms-3\54294f5f857978835a11e24fc1422778\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 INJECTED from F:\Study\CCRNAssessment\TodoApp\android\app\src\debug\AndroidManifest.xml:2:1-13:12
@@ -124,6 +127,8 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\ESHOP\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\ESHOP\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\ESHOP\.gradle\caches\transforms-3\3e0d478508575b75c79938eb5fb0fb04\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\ESHOP\.gradle\caches\transforms-3\3e0d478508575b75c79938eb5fb0fb04\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
+MERGED from [net.time4j:time4j-android:4.8-2021a] C:\Users\ESHOP\.gradle\caches\transforms-3\c19b4058e4af20c34268b7b0e48d5683\transformed\jetified-time4j-android-4.8-2021a\AndroidManifest.xml:11:5-20
+MERGED from [net.time4j:time4j-android:4.8-2021a] C:\Users\ESHOP\.gradle\caches\transforms-3\c19b4058e4af20c34268b7b0e48d5683\transformed\jetified-time4j-android-4.8-2021a\AndroidManifest.xml:11:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\ESHOP\.gradle\caches\transforms-3\63a3df243d2d102452600006144a86df\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:label
@@ -198,6 +203,8 @@ MERGED from [:react-native-masked-view_masked-view] F:\Study\CCRNAssessment\Todo
 MERGED from [:react-native-masked-view_masked-view] F:\Study\CCRNAssessment\TodoApp\node_modules\@react-native-masked-view\masked-view\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-picker_picker] F:\Study\CCRNAssessment\TodoApp\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-picker_picker] F:\Study\CCRNAssessment\TodoApp\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-date-picker] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-date-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-date-picker] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-date-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-linear-gradient] F:\Study\CCRNAssessment\TodoApp\node_modules\react-native-linear-gradient\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
@@ -318,6 +325,10 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] C:\Users\ESHOP\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] C:\Users\ESHOP\.gradle\caches\transforms-3\4e5f2ec05243774aa7a6d3ac597ca78a\transformed\lifecycle-runtime-2.4.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ESHOP\.gradle\caches\transforms-3\264bfea9cec9553b72567ddd2a81a286\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ESHOP\.gradle\caches\transforms-3\264bfea9cec9553b72567ddd2a81a286\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.henninghall:numberpickerview:v1.1.5] C:\Users\ESHOP\.gradle\caches\transforms-3\9b30bb2ac9392326984e629bec4936dc\transformed\jetified-numberpickerview-v1.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.henninghall:numberpickerview:v1.1.5] C:\Users\ESHOP\.gradle\caches\transforms-3\9b30bb2ac9392326984e629bec4936dc\transformed\jetified-numberpickerview-v1.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [net.time4j:time4j-android:4.8-2021a] C:\Users\ESHOP\.gradle\caches\transforms-3\c19b4058e4af20c34268b7b0e48d5683\transformed\jetified-time4j-android-4.8-2021a\AndroidManifest.xml:7:5-9:41
+MERGED from [net.time4j:time4j-android:4.8-2021a] C:\Users\ESHOP\.gradle\caches\transforms-3\c19b4058e4af20c34268b7b0e48d5683\transformed\jetified-time4j-android-4.8-2021a\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\ESHOP\.gradle\caches\transforms-3\fe525e62d2b9e85c0d777a0bb14f7298\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\ESHOP\.gradle\caches\transforms-3\fe525e62d2b9e85c0d777a0bb14f7298\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\ESHOP\.gradle\caches\transforms-3\54294f5f857978835a11e24fc1422778\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41

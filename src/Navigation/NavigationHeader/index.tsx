@@ -32,28 +32,7 @@ const getTitle = (activeRouteName, props) => {
 
 const showLeftButton = (activeRouteName, navigation, route) => {
   if (
-    activeRouteName === 'Products listings' ||
-    activeRouteName === 'Categories' ||
-    activeRouteName === 'Category' ||
-    activeRouteName === 'My Wishlist' ||
-    activeRouteName === 'SearchScreen' ||
-    activeRouteName === 'PrivacyPolicyScreen' ||
-    activeRouteName === 'AboutUsScreen' ||
-    activeRouteName === 'ContactUsScreen' ||
-    activeRouteName === 'My Profile' ||
-    activeRouteName === 'Edit Profile' ||
-    activeRouteName === 'Change Password' ||
-    activeRouteName === 'CategoryDetail' ||
-    activeRouteName === 'SelectSizes' ||
-    activeRouteName === 'Store Description' ||
-    activeRouteName === 'Cart' ||
-    activeRouteName === 'Checkout' ||
-    activeRouteName === 'MyFanRequestScreen' ||
-    activeRouteName === 'SubscriptionPlanScreen' ||
-    activeRouteName === 'SubscriptionPlanScreen2' ||
-    activeRouteName === 'DiscussionDetailScreen' ||
-    activeRouteName === 'PeopleSharedScreen' ||
-    activeRouteName === 'PeopleReactedScreen'
+    activeRouteName === 'Task Detail'
   ) {
     return (
       <TouchableOpacity

@@ -11,12 +11,13 @@ import MontRegular from '../../Components/TextWrappers/MontRegular';
 import MontExtraLight from '../../Components/TextWrappers/MontExtraLight';
 import AlertPopup from '../../Components/Popups/AlertPopup';
 
-const TodoCard = React.forwardRef(({item, index, setTaskID}, ref) => {
+const TodoCard = React.forwardRef(({item, index, setTaskID, navigation}, ref) => {
 
     return(
         <Animatable.View animation="fadeInLeft" duration={1000} iterationDelay={200 * index}>
             <TouchableOpacity 
-                onLongPress={() => {setTaskID(item?.id); ref?.current?.show()}} 
+                // onLongPress={() => {setTaskID(item?.id); ref?.current?.show()}} 
+                onPress={() => navigation.navigate('Task Detail')}
                 style={styles.subContainer}
             >
                 <View style={styles.row}>

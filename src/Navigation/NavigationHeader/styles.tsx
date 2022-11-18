@@ -20,13 +20,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     width: vw * 9,
     height: vw * 9,
-    backgroundColor: colors.white,
-    borderRadius: (vw * 9) / 2,
-    marginLeft: vw * 4,
-    ...appShadow,
-    // flex:1,
-    // position: 'absolute',
-    // left: 0,
+    marginLeft: vw * 3,
   },
   touchableMenu: {
     width: 9 * vw,
@@ -41,9 +35,10 @@ export default StyleSheet.create({
     zIndex: 9999,
   },
   backArrow: {
-    width: 3.2 * vw,
-    height: 3.2 * vw,
+    width: 4 * vw,
+    height: 4 * vw,
     resizeMode: 'contain',
+    tintColor: colors.white
   },
 
   notificationIcon: {
