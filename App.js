@@ -6,7 +6,8 @@
  * @flow strict-local
  */
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useEffect } from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import {
   StatusBar,
   StyleSheet,
@@ -20,6 +21,11 @@ import { persister, store } from './src/redux/store';
 import Loader from './src/Components/Loader';
 
 const App = () => {
+
+  useEffect(() => {
+    SplashScreen.hide()
+  }, [])
+
   return (
     <Provider store={store}>
       <PersistGate persistor={persister}>
