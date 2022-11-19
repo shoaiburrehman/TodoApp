@@ -23,8 +23,6 @@ const shouldHeaderBeShown = activeRouteName => {
 
 const getTitle = (activeRouteName, props) => {
   switch (activeRouteName) {
-    case 'TodoScreen':
-      return 'Todo List';
     default:
       return props.children;
   }
@@ -49,7 +47,13 @@ const showLeftButton = (activeRouteName, navigation, route) => {
       </TouchableOpacity>
     );
   }
-  if(activeRouteName === 'TodoScreen' || activeRouteName === 'Add Task'){
+  if(
+    activeRouteName === 'Todo List' || 
+    activeRouteName === 'Done Tasks List' || 
+    activeRouteName === 'Doing Tasks List' || 
+    activeRouteName === 'Cancelled List' || 
+    activeRouteName === 'Add Task'
+  ){
     return(
       <View
         style={styles.touchableMenu}

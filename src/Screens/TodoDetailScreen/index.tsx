@@ -8,12 +8,45 @@ import MontExtraLight from '../../Components/TextWrappers/MontExtraLight';
 import GradientButton from '../../Components/GradientButton';
 import MontSemiBold from '../../Components/TextWrappers/MontSemiBold';
 import ChangeStatusPopup from '../../Components/Popups/ChangeStatusPopup';
+import { useEditTodoHook } from '../../hooks/useEditTodoHook';
+import { showToast } from '../../Api/HelperFunction';
+import { isBlank } from '../../Utils/helper';
 
 const TodoDetailScreen = ({navigation, route}) => {
     const taskDetail = route?.params?.item;
     const alertPopupRef = useRef();
     const [status, setStatus] = useState('')
+    const [editTodoState, editTodoFunc] = useEditTodoHook();
 
+    useEffect(() => {
+        if(!isBlank(status)){
+            handleStatusChange()
+        }
+    }, [status])
+
+    useEffect(() => {
+        if(editTodoState){
+            setStatus('');
+            navigation?.goBack();
+        }
+    }, [editTodoState])
+
+    const handleStatusChange = () => {
+        if(isBlank(status)){
+            showToast('Please add task status');
+        } else {
+            let data = {
+                createdAt: taskDetail?.createdAt, 
+                deadline: taskDetail?.deadline, 
+                description: taskDetail?.description, 
+                id: taskDetail?.id, 
+                status: status, 
+                title: taskDetail?.title
+            }
+            console.log('editTodo: ', data)
+            editTodoFunc(data, taskDetail?.id);
+        }
+    }
 
     console.log('status: ', status)
     return (

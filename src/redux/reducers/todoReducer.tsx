@@ -19,11 +19,13 @@ export default todoReducer = (state = initialState, action) => {
         case actionTypes.loaderOn: {
             return {
                 ...state,
+                loading: true
             }
         }
         case actionTypes.loaderOff: {
             return {
                 ...state,
+                loading: false
             }
         }
         default: {

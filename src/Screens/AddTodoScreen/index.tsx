@@ -8,28 +8,79 @@ import InputField from '../../Components/InputField';
 import { generalImages } from '../../Assets/images';
 import GradientButton from '../../Components/GradientButton';
 import ResponsePopup from '../../Components/Popups/ResponsePopup';
-import { renderHeaderTitle } from '../../Navigation/NavigationHeader';
 import TouchableInput from '../../Components/TouchableInput';
 import ChangeStatusPopup from '../../Components/Popups/ChangeStatusPopup';
+import { useCreateTodoHook } from '../../hooks/useCreateTodoHook';
+import { isBlank } from '../../Utils/helper';
+import { showToast } from '../../Api/HelperFunction';
+import { useEditTodoHook } from '../../hooks/useEditTodoHook';
 
 const AddTodoScreen = (props) => {
   const taskDetail = props?.route?.params?.taskDetail;
   const [title, setTitle] = useState(taskDetail?.title || '');
   const [description, setDescription] = useState(taskDetail?.description || '');
   const [status, setStatus] = useState(taskDetail?.status || '');
-  const [date, setDate] = useState(taskDetail?.deadline ? new Date(taskDetail?.deadline) : new Date());
+  const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
+  const [isDate, setIsDate] = useState(false);
   const generalModalRef = useRef();
   const setStatusRef = useRef();
+  const [createTodoState, createTodoFunc] = useCreateTodoHook();
+  const [editTodoState, editTodoFunc] = useEditTodoHook();
+
   let formatDate = moment(date).format('DD-MM-YYYY')
 
-  // useLayoutEffect(() => {
-  //   if(keyword){
-  //     props.navigation.setOptions({
-  //       headerTitle: () => renderHeaderTitle(keyword),
-  //     });
-  //   }
-  // }, [props.navigation, keyword]);
+  useEffect(() => {
+    if(createTodoState || editTodoState){
+      generalModalRef?.current?.show()
+    }
+  }, [createTodoState, editTodoState])
+
+  const handleCreate = () => {
+    if(isBlank(title)){
+      showToast('Please Enter Task Title');
+    } else if(isBlank(description)){
+      showToast('Please Enter Task Description');
+    } else if(isBlank(date)){
+      showToast('Please Add Task Deadline');
+    } else {
+      if(taskDetail){
+        if(isBlank(status)){
+          showToast('Please add task status');
+        } else {
+          let data = {
+            createdAt: formatDate, 
+            deadline: formatDate, 
+            description: description, 
+            id: taskDetail?.id, 
+            status: status, 
+            title: title
+          }
+          console.log('editTodo: ', data)
+          editTodoFunc(data, data?.id);
+        }
+      } else {
+        let data = {
+          createdAt: formatDate, 
+          deadline: formatDate, 
+          description: description, 
+          id: `Task#${(moment())}`, 
+          status: "todo", 
+          title: title
+        }
+        createTodoFunc(data);
+      }
+    }
+  }
+
+  const handleOnAccept = () => {
+    if(taskDetail){
+      props.navigation.goBack();
+    } else {
+      setTitle('');
+      setDescription('');
+    }
+  }
 
   const renderFields = () => {
     return (
@@ -51,7 +102,7 @@ const AddTodoScreen = (props) => {
         <TouchableInput 
           title="Deadline" 
           placeholder="Select Deadline" 
-          value={formatDate ? formatDate : null}
+          value={taskDetail?.deadline && !isDate ? taskDetail?.deadline : (formatDate ? formatDate : null)}
           onPress={() => setOpen(true)}
         />
         <InputField 
@@ -68,7 +119,7 @@ const AddTodoScreen = (props) => {
           text={taskDetail ? "Edit Task" : "Add Task"}
           style={[styles.btn]} 
           textStyle={styles.btnText}
-          onPress={() => generalModalRef?.current?.show()}
+          onPress={handleCreate}
         />
       </View>
     );
@@ -88,15 +139,17 @@ const AddTodoScreen = (props) => {
         subTitle={taskDetail ? 'Your Task Has Been Updated Successfully!' : 'Your Task Has Been Added Successfully!'}
         image={generalImages.messageSent}
         primaryTitle={'OK'}
-        //onAccept={handleOnCancel}
+        onAccept={handleOnAccept}
       />
       <DatePicker
         modal
         mode={'date'}
         open={open}
         date={date}
+        minimumDate={new Date()}
         onConfirm={(date) => {
           setOpen(false)
+          setIsDate(true);
           setDate(date)
         }}
         onCancel={() => {

@@ -17,6 +17,7 @@ import Navigations from './src/Navigation';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persister, store } from './src/redux/store';
+import Loader from './src/Components/Loader';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
             backgroundColor="transparent"
             barStyle="light-content"
           />
+          <Loader />
           <Navigations />
         </View>
       </PersistGate>

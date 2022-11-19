@@ -9,6 +9,10 @@ export const showToast = msg => {
   }, 500);
 };
 
+export const wait = timeout => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+};
+
 export const handleResponse = ({response, jsonResponse}) => {
   switch (response.status) {
     case 200: {

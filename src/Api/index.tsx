@@ -64,8 +64,8 @@ export const deleteTask = async (queryParams) => {
   }
 };
 
-export const put = async (body, formData, queryParams) => {
-  const url = base_url + dataToQueryParameter(queryParams);
+export const put = async (body, formData = false, queryParams) => {
+  const url = base_url + '/' + queryParams;
   const configs = getConfigs('PUT', body, formData);
   try {
     const networkResult = await performNetworkRequest(url, configs);

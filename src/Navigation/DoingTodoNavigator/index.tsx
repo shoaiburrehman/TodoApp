@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
-import TodoScreen from '../../Screens/TodoScreen';
 import { options } from '../NavigationHeader';
+import DoingTodoScreen from '../../Screens/DoingTodoScreen';
 
 const DoingStack = createStackNavigator();
 
@@ -10,7 +9,7 @@ const DoingTodoNavigator = () => {
   return (
     <>
       <DoingStack.Navigator>
-        <DoingStack.Screen name="TodoScreen" component={TodoScreen} options={options} />
+        <DoingStack.Screen name="Doing Tasks List" component={DoingTodoScreen} options={options} />
       </DoingStack.Navigator>
     </>
   );

@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeNavigator from '../HomeNavigator';
 import BottomTabNavigator from '../BottomTabNavigator/BottomTabNavigator';
 import TodoDetailScreen from '../../Screens/TodoDetailScreen';
 import { options } from '../NavigationHeader';
