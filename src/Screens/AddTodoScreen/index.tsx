@@ -13,9 +13,7 @@ import TouchableInput from '../../Components/TouchableInput';
 import ChangeStatusPopup from '../../Components/Popups/ChangeStatusPopup';
 
 const AddTodoScreen = (props) => {
-  let keyword = props?.route?.params?.keyword;
   const taskDetail = props?.route?.params?.taskDetail;
-  console.log('taskDetailtaskDetail: ', taskDetail)
   const [title, setTitle] = useState(taskDetail?.title || '');
   const [description, setDescription] = useState(taskDetail?.description || '');
   const [status, setStatus] = useState(taskDetail?.status || '');
@@ -25,13 +23,13 @@ const AddTodoScreen = (props) => {
   const setStatusRef = useRef();
   let formatDate = moment(date).format('DD-MM-YYYY')
 
-  useLayoutEffect(() => {
-    if(keyword){
-      props.navigation.setOptions({
-        headerTitle: () => renderHeaderTitle(keyword),
-      });
-    }
-  }, [props.navigation, keyword]);
+  // useLayoutEffect(() => {
+  //   if(keyword){
+  //     props.navigation.setOptions({
+  //       headerTitle: () => renderHeaderTitle(keyword),
+  //     });
+  //   }
+  // }, [props.navigation, keyword]);
 
   const renderFields = () => {
     return (

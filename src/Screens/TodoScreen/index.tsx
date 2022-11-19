@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { View, FlatList } from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
 import { showToast } from '../../Api/HelperFunction';
 import { deleteTask, get, post } from '../../Api';
 import AlertPopup from '../../Components/Popups/AlertPopup';
 import TodoCard from '../../Components/TodoCard';
 import MainStyle from '../../Utils/mainStyle';
+import { todoList } from '../../redux/actions/todoActions';
 
 const TodoScreen = ({navigation}) => {
+    const dispatch = useDispatch();
+    const todoData = useSelector(state => state.todoReducer.todoList);
     const [task, setTask] = useState();
     const [taskID, setTaskID] = useState();
     const alertPopupRef = useRef()
@@ -15,13 +19,24 @@ const TodoScreen = ({navigation}) => {
         getTodo()
     }, []);
   
-    const getTodo = async() => {
+    const getTodo = () => {
         try {
-            const response = await get();
-            setTask(response)
+            dispatch(todoList()).then(res => {
+                console.log('resres: ', res)
+                if(res){
+                    setTask(res)
+                }
+            }).catch((e) => {
+                showToast(e);
+            });
         } catch (error) {
-            showToast(error)
+            showToast(error);
         }
+        // try {
+        //     const response = await get();
+        // } catch (error) {
+        //     showToast(error)
+        // }
     }
 
     const deleteTodo = async(id) => {
@@ -64,7 +79,7 @@ const TodoScreen = ({navigation}) => {
         );
     }
 
-    console.log('task: ', task)
+    console.log('todoData: ', todoData)
     return (
         <View style={MainStyle.container}>
             <FlatList
