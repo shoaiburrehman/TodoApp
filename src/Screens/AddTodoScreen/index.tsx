@@ -13,14 +13,14 @@ import TouchableInput from '../../Components/TouchableInput';
 
 const AddTodoScreen = (props) => {
   let keyword = props?.route?.params?.keyword;
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState( '');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
-  const [date, setDate] = useState(new Date());
+  const taskDetail = props?.route?.params?.taskDetail;
+  console.log('taskDetailtaskDetail: ', taskDetail)
+  const [title, setTitle] = useState(taskDetail?.title || '');
+  const [description, setDescription] = useState(taskDetail?.description || '');
+  const [date, setDate] = useState(new Date(taskDetail?.deadline) || new Date());
   const [open, setOpen] = useState(false);
   const generalModalRef = useRef();
-  let formatDate = moment(date).format('DD/MM/YYYY')
+  let formatDate = moment(date).format('DD-MM-YYYY')
 
   useLayoutEffect(() => {
     if(keyword){
@@ -36,14 +36,8 @@ const AddTodoScreen = (props) => {
         <InputField 
           title="Title" 
           placeholder="Enter Title" 
-          value={name}
-          onChangeText={setName}
-        />
-        <InputField 
-          title="Status" 
-          placeholder="Enter Status" 
-          value={email}
-          onChangeText={setEmail}
+          value={title}
+          onChangeText={setTitle}
         />
         <TouchableInput 
           title="Deadline" 
@@ -57,12 +51,12 @@ const AddTodoScreen = (props) => {
           multiline={true}
           textAlignVertical="top"
           textInputStyle={styles.textInputStyle} 
-          value={message}
-          onChangeText={setMessage}
+          value={description}
+          onChangeText={setDescription}
         />
 
         <GradientButton
-          text={"Submit"}
+          text={taskDetail ? "Edit Task" : "Add Task"}
           style={[styles.btn]} 
           textStyle={styles.btnText}
           onPress={() => generalModalRef?.current?.show()}

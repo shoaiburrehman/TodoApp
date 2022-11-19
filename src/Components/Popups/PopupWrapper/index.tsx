@@ -39,7 +39,7 @@ const PopupWrapper = props => {
       transparent={true}
       visible={visible}
       style={styles.modal}>
-      <View style={styles.mainContainer}>
+      <View style={[styles.mainContainer, props?.mainContainer]}>
         <TouchableOpacity
           onPress={hide}
           activeOpacity={0.9}

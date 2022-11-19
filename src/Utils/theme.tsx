@@ -4,6 +4,7 @@ export const colors = {
   red: '#FF0000',
   gradientBtnColor: ['#009387', '#40b8ad'],
   lightRed: '#FF4747',
+  lightBlack: '#1d2733',
   themeColor: '#009387',
   bgCartColor: '#EAEEF4',
   whiteColor: '#ffffff',

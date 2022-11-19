@@ -1,79 +1,51 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { View, FlatList } from 'react-native';
-import { showToast } from '../../Api/HelperFunction';
-import { deleteTask, get, post } from '../../Api';
-import AlertPopup from '../../Components/Popups/AlertPopup';
-import TodoCard from '../../Components/TodoCard';
+import { View, TouchableOpacity, ScrollView } from 'react-native';
+import Icon from 'react-native-vector-icons/Feather'
 import MainStyle from '../../Utils/mainStyle';
+import { styles } from './styles';
+import MontBold from '../../Components/TextWrappers/MontBold';
+import { colors } from '../../Utils/theme';
+import MontExtraLight from '../../Components/TextWrappers/MontExtraLight';
+import GradientButton from '../../Components/GradientButton';
+import MontSemiBold from '../../Components/TextWrappers/MontSemiBold';
+import ChangeStatusPopup from '../../Components/Popups/ChangeStatusPopup';
 
-const TodoDetailScreen = ({navigation}) => {
-    const [task, setTask] = useState();
-    const [taskID, setTaskID] = useState();
-    const alertPopupRef = useRef()
+const TodoDetailScreen = ({navigation, route}) => {
+    const taskDetail = route?.params?.item;
+    const alertPopupRef = useRef();
+    const [status, setStatus] = useState('')
 
-    useEffect(() => {  
-        getTodo()
-    }, []);
-  
-    const getTodo = async() => {
-        try {
-            const response = await get();
-            setTask(response)
-        } catch (error) {
-            showToast(error)
-        }
-    }
 
-    const deleteTodo = async(id) => {
-        console.log('id: ', id)
-        try {
-            const response = await deleteTask(id);
-            console.log('response: ', response)
-            // setTask(response)
-        } catch (error) {
-            showToast(error)
-        }
-    }
-
-    const createTodo = async() => {
-        let data = {
-            createdAt: 1667103624, 
-            deadline: "deadline 3", 
-            description: "description 3", 
-            id: "3", 
-            status: "status 3", 
-            title: "title 3"
-        }
-        try {
-            const response = await post(data);
-            console.log('response: ', response)
-        } catch (error) {
-            showToast(error)
-        }
-    }
-
-    const renderCard = ({item, index}) => {
-        return(
-            <TodoCard item={item} index={index} ref={alertPopupRef} setTaskID={setTaskID} />
-        );
-    }
-
-    console.log('task: ', task)
+    console.log('status: ', status)
     return (
         <View style={MainStyle.container}>
-            <FlatList
-                data={task}
-                renderItem={renderCard}
-                showsVerticalScrollIndicator={false}
-            />
-            <AlertPopup
-                reference={alertPopupRef}
-                title={'Delete Task'}
-                subTitle={'Are You Sure You Want To Delete This Task?'}
-                secondaryTitle={'No'}
-                primaryTitle={'Yes'}
-                onAccept={() => deleteTodo(taskID)}
-            />
+            <ScrollView style={styles.subContainer} showsVerticalScrollIndicator={false}>
+                <View style={styles.flexRow}>
+                    <MontBold style={styles.title}>{taskDetail?.title}</MontBold>
+                    <TouchableOpacity style={styles.touchableEdit} onPress={() => navigation?.navigate('Edit Task', {taskDetail: taskDetail})}>
+                        <Icon name="edit" color={colors.themeColor} size={18.5}/>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.innerContainer}>
+                    <MontSemiBold style={[styles.titleText]}>Deadline</MontSemiBold>
+                    <MontExtraLight style={styles.infoText}>{taskDetail?.deadline}</MontExtraLight>
+                </View>
+                <View style={styles.innerContainer}>
+                    <MontSemiBold style={[styles.titleText]}>Status</MontSemiBold>
+                    <MontExtraLight style={styles.infoText}>{status ? status : taskDetail?.status}</MontExtraLight>
+                </View>
+                <View style={styles.innerContainer}>
+                    <MontSemiBold style={[styles.titleText]}>Description</MontSemiBold>
+                    <MontExtraLight style={styles.infoText}>{taskDetail?.description}</MontExtraLight>
+                </View>
+                <GradientButton
+                    text={"Change Status"}
+                    style={[styles.btn]} 
+                    textStyle={styles.btnText}
+                    onPress={() => alertPopupRef?.current?.show()}
+                />
+            </ScrollView>
+            <ChangeStatusPopup ref={alertPopupRef} setStatus={setStatus} />
         </View>
     );
 }

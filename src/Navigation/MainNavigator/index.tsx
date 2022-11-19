@@ -4,6 +4,7 @@ import HomeNavigator from '../HomeNavigator';
 import BottomTabNavigator from '../BottomTabNavigator/BottomTabNavigator';
 import TodoDetailScreen from '../../Screens/TodoDetailScreen';
 import { options } from '../NavigationHeader';
+import AddTodoScreen from '../../Screens/AddTodoScreen';
 
 const RootStack = createStackNavigator();
 
@@ -12,6 +13,7 @@ const MainNavigator = () => {
     <RootStack.Navigator screenOptions={{headerShown: false}}>
       <RootStack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
       <RootStack.Screen name="Task Detail" component={TodoDetailScreen} options={options} />
+      <RootStack.Screen name="Edit Task" component={AddTodoScreen} options={options} />
     </RootStack.Navigator>
   );
 };

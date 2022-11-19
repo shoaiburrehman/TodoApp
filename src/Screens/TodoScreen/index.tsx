@@ -54,7 +54,13 @@ const TodoScreen = ({navigation}) => {
 
     const renderCard = ({item, index}) => {
         return(
-            <TodoCard item={item} index={index} ref={alertPopupRef} setTaskID={setTaskID} navigation={navigation} />
+            <TodoCard 
+                item={item} 
+                index={index} 
+                ref={alertPopupRef} 
+                setTaskID={setTaskID} 
+                navigation={navigation} 
+            />
         );
     }
 

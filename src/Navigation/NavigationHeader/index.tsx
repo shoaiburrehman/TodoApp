@@ -32,7 +32,8 @@ const getTitle = (activeRouteName, props) => {
 
 const showLeftButton = (activeRouteName, navigation, route) => {
   if (
-    activeRouteName === 'Task Detail'
+    activeRouteName === 'Task Detail' ||
+    activeRouteName === 'Edit Task'
   ) {
     return (
       <TouchableOpacity
@@ -48,7 +49,7 @@ const showLeftButton = (activeRouteName, navigation, route) => {
       </TouchableOpacity>
     );
   }
-  if(activeRouteName === 'TodoScreen' || activeRouteName === 'Add Task' ||activeRouteName === 'Edit Task' ){
+  if(activeRouteName === 'TodoScreen' || activeRouteName === 'Add Task'){
     return(
       <View
         style={styles.touchableMenu}

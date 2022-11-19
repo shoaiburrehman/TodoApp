@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, ScrollView, Alert } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import * as Animatable from 'react-native-animatable';
 import { styles } from './styles';
@@ -17,13 +17,13 @@ const TodoCard = React.forwardRef(({item, index, setTaskID, navigation}, ref) =>
         <Animatable.View animation="fadeInLeft" duration={1000} iterationDelay={200 * index}>
             <TouchableOpacity 
                 // onLongPress={() => {setTaskID(item?.id); ref?.current?.show()}} 
-                onPress={() => navigation.navigate('Task Detail')}
+                onPress={() => navigation.navigate('Task Detail', {item: item})}
                 style={styles.subContainer}
             >
                 <View style={styles.row}>
                     <View>
                         <MontHeavy numberOfLines={2} style={styles.title}>{item.title}</MontHeavy>
-                        <Text>Status: {item.status}</Text>
+                        <MontExtraLight style={styles.deadlineTxt}>Status: {item.status}</MontExtraLight>
                         <View style={styles.descView}>
                             <MontRegular numberOfLines={5} style={styles.desc}>{item.description}</MontRegular>
                         </View>

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   btn: {
-    marginVertical: vh * 2.5,
+    marginVertical: vh * 4,
     width: vw * 80,
     height: vh * 8,
     borderRadius: vw * 2,

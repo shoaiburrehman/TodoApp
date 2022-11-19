@@ -5,6 +5,7 @@ import { DEVICE_WIDTH, fontSizes, vh, vw } from '../../Utils/units';
 
 export const styles = StyleSheet.create({
     subContainer: {
+        width: vw * 90,
         marginHorizontal: vw * 5,
         padding: vh * 4,
         marginVertical: vh * 2,
@@ -23,7 +24,6 @@ export const styles = StyleSheet.create({
         color: colors.textColor
     },
     descView: {
-        flexDirection: 'row', 
         marginTop: vh,
         justifyContent: 'center'
     },
