@@ -10,6 +10,7 @@ import GradientButton from '../../Components/GradientButton';
 import ResponsePopup from '../../Components/Popups/ResponsePopup';
 import { renderHeaderTitle } from '../../Navigation/NavigationHeader';
 import TouchableInput from '../../Components/TouchableInput';
+import ChangeStatusPopup from '../../Components/Popups/ChangeStatusPopup';
 
 const AddTodoScreen = (props) => {
   let keyword = props?.route?.params?.keyword;
@@ -17,9 +18,11 @@ const AddTodoScreen = (props) => {
   console.log('taskDetailtaskDetail: ', taskDetail)
   const [title, setTitle] = useState(taskDetail?.title || '');
   const [description, setDescription] = useState(taskDetail?.description || '');
-  const [date, setDate] = useState(new Date(taskDetail?.deadline) || new Date());
+  const [status, setStatus] = useState(taskDetail?.status || '');
+  const [date, setDate] = useState(taskDetail?.deadline ? new Date(taskDetail?.deadline) : new Date());
   const [open, setOpen] = useState(false);
   const generalModalRef = useRef();
+  const setStatusRef = useRef();
   let formatDate = moment(date).format('DD-MM-YYYY')
 
   useLayoutEffect(() => {
@@ -39,9 +42,17 @@ const AddTodoScreen = (props) => {
           value={title}
           onChangeText={setTitle}
         />
+        {taskDetail &&
+          <TouchableInput 
+            title="Status" 
+            placeholder="Select Status" 
+            value={status ? status : "Select Status"}
+            onPress={() => setStatusRef?.current.show()}
+          />
+        }
         <TouchableInput 
           title="Deadline" 
-          placeholder="Enter Deadline" 
+          placeholder="Select Deadline" 
           value={formatDate ? formatDate : null}
           onPress={() => setOpen(true)}
         />
@@ -76,7 +87,7 @@ const AddTodoScreen = (props) => {
       <ResponsePopup
         reference={generalModalRef}
         title={'Task Added'}
-        subTitle={'Your Task Has Been Added Successfully!'}
+        subTitle={taskDetail ? 'Your Task Has Been Updated Successfully!' : 'Your Task Has Been Added Successfully!'}
         image={generalImages.messageSent}
         primaryTitle={'OK'}
         //onAccept={handleOnCancel}
@@ -94,6 +105,7 @@ const AddTodoScreen = (props) => {
           setOpen(false)
         }}
       />
+      <ChangeStatusPopup ref={setStatusRef} setStatus={setStatus} />
     </View>
   );
 };

@@ -13,15 +13,23 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.whiteColor,
         ...appShadow
     },
+    flexRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
     row: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        alignSelf: 'flex-start'
+    },
+    touchableEdit: {
+        marginRight: vw * 2,
     },
     title: {
         fontSize: vh * 2.6,
-        // fontWeight: 'bold',
-        letterSpacing: 0,
-        textAlign: "left",
-        color: colors.textColor
+        color: colors.textColor,
+        width: vw * 58,
     },
     descView: {
         marginTop: vh,
@@ -33,16 +41,13 @@ export const styles = StyleSheet.create({
         fontSize: vh * 2.3
     },
     imgEditPencil: {
-        position: 'absolute',
-        right: 0,
-        top: 0,
-        width: vw * 4,
     },
     deadlineView: {
         alignSelf: 'flex-end',
         marginTop: vh,
     },
     deadlineTxt: {
+        marginTop: vh * 0.5,
         color: colors.grayColor,
         fontSize: fontSizes.f12 * 1.1
     }

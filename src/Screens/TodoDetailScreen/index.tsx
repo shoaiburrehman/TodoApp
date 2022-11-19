@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { View, TouchableOpacity, ScrollView } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather'
 import MainStyle from '../../Utils/mainStyle';
 import { styles } from './styles';
 import MontBold from '../../Components/TextWrappers/MontBold';
@@ -22,9 +21,6 @@ const TodoDetailScreen = ({navigation, route}) => {
             <ScrollView style={styles.subContainer} showsVerticalScrollIndicator={false}>
                 <View style={styles.flexRow}>
                     <MontBold style={styles.title}>{taskDetail?.title}</MontBold>
-                    <TouchableOpacity style={styles.touchableEdit} onPress={() => navigation?.navigate('Edit Task', {taskDetail: taskDetail})}>
-                        <Icon name="edit" color={colors.themeColor} size={18.5}/>
-                    </TouchableOpacity>
                 </View>
                 <View style={styles.innerContainer}>
                     <MontSemiBold style={[styles.titleText]}>Deadline</MontSemiBold>
