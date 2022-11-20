@@ -1,6 +1,3 @@
-/* eslint-disable no-shadow */
-// import {store} from '../Statemanagement/store';
-
 import {Alert, Platform, ToastAndroid} from 'react-native';
 
 export const showToast = msg => {
@@ -132,17 +129,6 @@ export const getConfigs = (method, body, formData = true) => {
   if (formData === true) {
     headers['Content-Type'] = 'multipart/form-data';
   }
-  // const data = store.getState();
-  // if (data) {
-  //   if (data.SessionReducer) {
-  //     if (data.SessionReducer.token != null) {
-  //       if (data.SessionReducer.token) {
-  //         console.log('TOKEN', data.SessionReducer.token);
-  //         headers.Authorization = 'Bearer ' + data.SessionReducer.token;
-  //       }
-  //     }
-  //   }
-  // }
   var configs = {
     method: method,
     headers: headers,

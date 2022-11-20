@@ -4,7 +4,6 @@ import styles from './styles';
 import TextInputHOC from '../TextInputHOC';
 import OutfitRegular from '../TextWrappers/OutfitRegular';
 import { vw } from '../../Utils/units';
-import { generalIcons } from '../../Assets/images';
 
 export default InputField = props => {
   const [isShow, setIsShow] = useState(false);
@@ -51,29 +50,6 @@ export default InputField = props => {
           secureTextEntry={props.secureTextEntry && !isShow}
           authInput
         />
-        {props.secureTextEntry && (
-          <TouchableOpacity
-            style={styles.iconContainer}
-            onPress={handlePassword}>
-            <Image
-              source={isShow ? generalIcons.passShow : generalIcons.passHide}
-              style={styles.icon}
-              resizeMode="contain"
-            />
-          </TouchableOpacity>
-        )}
-
-        {props.valid && (
-          <View
-            style={styles.iconContainer}
-          >
-            <Image
-              source={generalIcons.checkedPlane}
-              style={styles.icon}
-              resizeMode="contain"
-            />
-          </View>
-        )}
 
         {props.icon && (
           <TouchableOpacity

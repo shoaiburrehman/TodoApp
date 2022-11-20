@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 import {View, Image, TouchableOpacity} from 'react-native';
 import styles from './styles';
-import TextInputHOC from '../TextInputHOC';
 import OutfitRegular from '../TextWrappers/OutfitRegular';
 import { vw } from '../../Utils/units';
-import { generalIcons } from '../../Assets/images';
 import MontRegular from '../TextWrappers/MontRegular';
 
 export default TouchableInput = props => {
@@ -53,17 +51,6 @@ export default TouchableInput = props => {
         >
           {props?.value ? props?.value : props?.placeholder}
         </MontRegular>
-        {props.valid && (
-          <View
-            style={styles.iconContainer}
-          >
-            <Image
-              source={generalIcons.checkedPlane}
-              style={styles.icon}
-              resizeMode="contain"
-            />
-          </View>
-        )}
 
         {props.icon && (
           <View

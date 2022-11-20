@@ -1,6 +1,3 @@
-import { sampleImages } from "../Assets/images";
-import { colors } from "./theme";
-
 export const statusList = [
     {
         label: '1',

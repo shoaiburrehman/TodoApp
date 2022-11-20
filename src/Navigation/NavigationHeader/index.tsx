@@ -7,7 +7,7 @@ import {
 import {vw, vh} from '../../Utils/units';
 import styles from './styles';
 import MontBold from '../../Components/TextWrappers/MontBold';
-import {generalIcons, generalImages, sampleImages} from '../../Assets/images';
+import {generalIcons, generalImages} from '../../Assets/images';
 
 const shouldHeaderBeShown = activeRouteName => {
   switch (activeRouteName) {
