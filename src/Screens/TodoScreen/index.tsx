@@ -14,16 +14,21 @@ import GradientButton from '../../Components/GradientButton';
 import MainButton from '../../Components/MainButton';
 import { colors } from '../../Utils/theme';
 
-const TodoScreen = ({navigation}) => {
-    const todoData = useSelector(state => state.todoReducer.todoList);
-    const [task, setTask] = useState();
+interface Props {
+    navigation: any,
+    route: any
+}
+  
+const TodoScreen = ({navigation}: Props) => {
+    const todoData = useSelector((state: any) => state.todoReducer.todoList);
+    const [task, setTask] = useState<any>();
     const [refreshing, setRefreshing] = useState(false);
     const [taskID, setTaskID] = useState();
     const [undoActive, setUndoActive] = useState(false);
     
     const [todoState, todoFunc] = useGetTodoHook();
     const [deleteTodoState, deleteTodoFunc] = useDeleteTodoHook(); 
-    const alertPopupRef = useRef()
+    const alertPopupRef = useRef<any>()
 
     useFocusEffect(
         useCallback(() => {
@@ -39,7 +44,7 @@ const TodoScreen = ({navigation}) => {
 
     useEffect(() => {
         if(todoData){
-            setTask(todoData?.filter((item) => item?.status === 'todo'))
+            setTask(todoData?.filter((item: any) => item?.status === 'todo'))
         }
     }, [todoData])
 
@@ -64,7 +69,7 @@ const TodoScreen = ({navigation}) => {
         deleteTodoFunc(task[task.length - 1]?.id, task[task.length - 1])
     }
 
-    const renderCard = ({item, index}) => {
+    const renderCard = ({item, index}: any) => {
         return(
             <TodoCard 
                 history={false}
@@ -118,7 +123,6 @@ const TodoScreen = ({navigation}) => {
             />
             <AlertPopup
                 reference={alertPopupRef}
-                title={'Delete Task'}
                 subTitle={'Are You Sure You Want To Delete This Task?'}
                 secondaryTitle={'No'}
                 primaryTitle={'Yes'}

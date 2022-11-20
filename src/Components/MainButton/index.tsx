@@ -5,12 +5,16 @@ import {
     Image,
     View
 } from "react-native";
-import LinearGradient from 'react-native-linear-gradient';
-import { colors } from "../../Utils/theme";
-import { vh } from "../../Utils/units";
 
-const MainButton = (props) => {
-    
+interface Props {
+    style: {},
+    onPress?: () => void,
+    textStyle: {},
+    text: string,
+    active: boolean,
+}
+
+const MainButton: React.FC<Props> = (props: Props) => {    
     if(props?.active == false){
         return (
             <View style={props.style}>

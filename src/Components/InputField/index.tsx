@@ -5,7 +5,22 @@ import TextInputHOC from '../TextInputHOC';
 import OutfitRegular from '../TextWrappers/OutfitRegular';
 import { vw } from '../../Utils/units';
 
-export default InputField = props => {
+interface Props {
+  style: {},
+  onPress?: () => void,
+  secureTextEntry: boolean,
+  notRequired: boolean,
+  title: string,
+  titleTextStyle: {},
+  textInputContainer: {},
+  textInputStyle: {},
+  icon: any,
+  placeholder: string,
+}
+
+const InputField = (props: Props) => {
+
+// export default InputField = props => {
   const [isShow, setIsShow] = useState(false);
 
   const handlePassword = () => {
@@ -13,7 +28,9 @@ export default InputField = props => {
   };
 
   const handleIconPress = () => {
-    props.onPress();
+    if(props?.onPress){
+      props?.onPress();
+    };
   }
 
   const getInputWidth = () => {
@@ -66,3 +83,5 @@ export default InputField = props => {
     </View>
   );
 };
+
+export default InputField;

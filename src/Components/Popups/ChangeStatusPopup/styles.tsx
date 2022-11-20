@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../../../Utils/theme';
 import {fontSizes, vh, vw} from '../../../Utils/units';
 
-export default styles = StyleSheet.create({
+const styles = StyleSheet.create({
   modalStyle: {
     justifyContent: 'flex-end',
   },
@@ -119,7 +119,6 @@ export default styles = StyleSheet.create({
     borderRadius: vw * 3,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: colors.borderModal,
     borderWidth: 2,
   },
   btnText: {
@@ -130,11 +129,9 @@ export default styles = StyleSheet.create({
   btnText2: {
     fontSize: fontSizes.f14,
     textAlign: "center",
-    color: colors.borderModal,  
   },
   noBtn: {
     borderRadius: vw * 2,
-    backgroundColor: colors.grayBackgroundColor,
   },
   headerBarLine: {
     width: vw * 16,
@@ -159,3 +156,5 @@ export default styles = StyleSheet.create({
     fontWeight: 'bold'
   },
 });
+
+export default styles;

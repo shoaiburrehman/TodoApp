@@ -5,7 +5,17 @@ import {useImperativeHandle} from 'react';
 import { colors } from '../../../Utils/theme';
 import { vh, vw } from '../../../Utils/units';
 
-const PopupWrapper = props => {
+interface Props {
+  reference: any,
+  onCancel: any | undefined,
+  onShow: any | undefined,
+  mainContainer: object | undefined,
+  children: any,
+  containerStyle: object | undefined,
+  style: object
+}
+
+const PopupWrapper = (props: Props) => {
   const [visible, setVisible] = useState(false);
 
   useImperativeHandle(props?.reference, () => ({
@@ -13,7 +23,7 @@ const PopupWrapper = props => {
     show: show,
   }));
 
-  const hide = onCancel => {
+  const hide = (onCancel: any) => {
     setVisible(false);
     if (typeof onCancel === 'function') {
       onCancel();
@@ -23,7 +33,7 @@ const PopupWrapper = props => {
       }
     }
   };
-  const show = onShow => {
+  const show = (onShow: any) => {
     setVisible(true);
     if (typeof onShow === 'function') {
       onShow();

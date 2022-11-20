@@ -7,15 +7,15 @@ export const useCreateTodoHook = () => {
   const dispatch = useDispatch();
   const [createTodoState, setCreateTodoState] = useState(null);
 
-  const createTodoFunc = useCallback((data) => {
+  const createTodoFunc = useCallback((data: object) => {
     try {
-      dispatch(createTodo(data)).then(res => {
+      dispatch(createTodo(data)).then((res: object) => {
         setCreateTodoState(res);
-      }).catch((e) => {
+      }).catch((e: any) => {
         showToast(e);
       });
 
-    } catch (error) {
+    } catch (error: any) {
       showToast(error);
     }
   }, []);

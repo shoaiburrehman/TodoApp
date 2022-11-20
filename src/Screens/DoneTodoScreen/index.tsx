@@ -10,15 +10,20 @@ import { useGetTodoHook } from '../../hooks/useGetTodoHook';
 import { useDeleteTodoHook } from '../../hooks/useDeleteTodoHook';
 import EmptyList from '../../Components/EmptyList';
 
-const DoneTodoScreen = ({navigation}) => {
-    const todoData = useSelector(state => state.todoReducer.todoList);
-    const [task, setTask] = useState();
+interface Props {
+    navigation: any,
+    route: any
+}
+
+const DoneTodoScreen = ({navigation}: Props) => {
+    const todoData = useSelector((state: any) => state.todoReducer.todoList);
+    const [task, setTask] = useState<any>();
     const [refreshing, setRefreshing] = useState(false);
     const [taskID, setTaskID] = useState();
     
     const [todoState, todoFunc] = useGetTodoHook();
     const [deleteTodoState, deleteTodoFunc] = useDeleteTodoHook(); 
-    const alertPopupRef = useRef()
+    const alertPopupRef = useRef<any>()
 
     useFocusEffect(
         useCallback(() => {
@@ -34,7 +39,7 @@ const DoneTodoScreen = ({navigation}) => {
 
     useEffect(() => {
         if(todoData){
-            setTask(todoData?.filter((item) => item?.status === 'Done'))
+            setTask(todoData?.filter((item: any) => item?.status === 'Done'))
         }
     }, [todoData])
 
@@ -46,7 +51,7 @@ const DoneTodoScreen = ({navigation}) => {
         });
     }
     
-    const renderCard = ({item, index}) => {
+    const renderCard = ({item, index}: any) => {
         return(
             <TodoCard 
                 history={false}
@@ -79,7 +84,6 @@ const DoneTodoScreen = ({navigation}) => {
             />
             <AlertPopup
                 reference={alertPopupRef}
-                title={'Delete Task'}
                 subTitle={'Are You Sure You Want To Delete This Task?'}
                 secondaryTitle={'No'}
                 primaryTitle={'Yes'}

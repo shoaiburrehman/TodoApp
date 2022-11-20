@@ -7,7 +7,7 @@ import {
 } from './HelperFunction';
 import {base_url} from './configs';
 
-export const post = async (body, formData = false, queryParams) => {
+export const post = async (body = {}, formData = false, queryParams = {}) => {
   const url = base_url + dataToQueryParameter(queryParams);
 
   console.log('URL', url);
@@ -27,7 +27,7 @@ export const post = async (body, formData = false, queryParams) => {
   }
 };
 
-export const get = async (queryParams) => {
+export const get = async (queryParams = {}) => {
   const url = base_url + dataToQueryParameter(queryParams);
   console.log('URL GET', url);
   const configs = getConfigs('GET');
@@ -42,7 +42,7 @@ export const get = async (queryParams) => {
   }
 };
 
-export const deleteTask = async (queryParams) => {
+export const deleteTask = async (queryParams ={}) => {
   const url = base_url + '/' + queryParams;
   console.log('URL GET', url);
   const configs = getConfigs('DELETE');
@@ -57,7 +57,7 @@ export const deleteTask = async (queryParams) => {
   }
 };
 
-export const put = async (body, formData = false, queryParams) => {
+export const put = async (body = {}, formData = false, queryParams = {}) => {
   const url = base_url + '/' + queryParams;
   const configs = getConfigs('PUT', body, formData);
   try {

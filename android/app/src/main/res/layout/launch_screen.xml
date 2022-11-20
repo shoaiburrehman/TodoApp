@@ -6,9 +6,9 @@
     android:background="@color/blue"
     android:gravity="center">
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:src="@mipmap/logo"
     />
 </LinearLayout>

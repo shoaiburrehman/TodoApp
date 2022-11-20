@@ -5,11 +5,18 @@ import MontBold from '../../TextWrappers/MontBold';
 import MontRegular from '../../TextWrappers/MontRegular';
 import { statusList } from '../../../Utils/data';
 import PopupWrapper from '../PopupWrapper';
-import GradientButton from '../../GradientButton';
-import { colors } from '../../../Utils/theme';
 
-const ChangeStatusPopup = React.forwardRef((props, ref) => {
-  const modalRef = useRef();
+interface Props {
+  reference: any,
+  handleOnSuccess?: () => void,
+  subTitle: string,
+  primaryTitle: string,
+  secondaryTitle: string,
+  setStatus: (text: string) => void
+}
+
+const ChangeStatusPopup = React.forwardRef((props: Props, ref) => {
+  const modalRef = useRef<any>();
 
   useImperativeHandle(ref, () => ({
     show: () => showModal(),
@@ -24,7 +31,7 @@ const ChangeStatusPopup = React.forwardRef((props, ref) => {
     modalRef.current.hide();
   };
 
-  const handleOnSuccess = (text) => {
+  const handleOnSuccess = (text: string) => {
     hideModal();
     if (props?.handleOnSuccess) {
       props.handleOnSuccess();

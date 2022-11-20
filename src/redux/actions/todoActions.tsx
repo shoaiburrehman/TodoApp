@@ -30,7 +30,7 @@ export const todoList = () => {
   };
 };
 
-export const createTodo = (data) => {
+export const createTodo = (data: object) => {
   return async dispatch => {
     return new Promise((resolve, reject) => {
       setTimeout(async () => {
@@ -58,7 +58,7 @@ export const createTodo = (data) => {
   };
 };
 
-export const deleteTodo = (id, undoTask) => {
+export const deleteTodo = (id: string, undoTask: any) => {
   return async dispatch => {
     return new Promise((resolve, reject) => {
       setTimeout(async () => {
@@ -91,7 +91,7 @@ export const deleteTodo = (id, undoTask) => {
   };
 };
 
-export const editTodo = (data, id) => {
+export const editTodo = (data: object, id: string) => {
   return async dispatch => {
     return new Promise((resolve, reject) => {
       setTimeout(async () => {

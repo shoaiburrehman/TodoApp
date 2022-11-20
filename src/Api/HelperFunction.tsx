@@ -1,16 +1,16 @@
 import {Alert, Platform, ToastAndroid} from 'react-native';
 
-export const showToast = msg => {
+export const showToast = (msg: string) => {
   setTimeout(() => {
     ToastAndroid.show(getMessage(msg), ToastAndroid.SHORT);
   }, 500);
 };
 
-export const wait = timeout => {
+export const wait = (timeout: number) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 };
 
-export const handleResponse = ({response, jsonResponse}) => {
+export const handleResponse = ({response = {}, jsonResponse = {}}) => {
   switch (response.status) {
     case 200: {
       console.log('case 200');
@@ -42,7 +42,7 @@ export const handleResponse = ({response, jsonResponse}) => {
     }
   }
 };
-export const performNetworkRequest = async (url, configs) => {
+export const performNetworkRequest = async (url: string, configs: {}) => {
   url = encodeURI(url);
   try {
     const response = await fetch(url, configs);
@@ -53,7 +53,7 @@ export const performNetworkRequest = async (url, configs) => {
   }
 };
 export const message = 'Something went wrong';
-export const getMessage = json => {
+export const getMessage = (json: any) => {
   console.log('JSON   KKKKKK', json);
   switch (typeof json) {
     case 'string': {
@@ -112,7 +112,7 @@ export const getMessage = json => {
     }
   }
 };
-export const jsonToFormdata = json => {
+export const jsonToFormdata = (json: any) => {
   var data = new FormData();
   const entries = Object.entries(json);
   entries.forEach(entry => {
@@ -120,7 +120,7 @@ export const jsonToFormdata = json => {
   });
   return data;
 };
-export const getConfigs = (method, body, formData = true) => {
+export const getConfigs = (method: string, body: any, formData = true) => {
   var headers = {
     Accept: 'application/json',
     'X-Requested-With': 'XMLHttpRequest',
@@ -129,7 +129,7 @@ export const getConfigs = (method, body, formData = true) => {
   if (formData === true) {
     headers['Content-Type'] = 'multipart/form-data';
   }
-  var configs = {
+  let configs = {
     method: method,
     headers: headers,
   };
@@ -144,7 +144,7 @@ export const getConfigs = (method, body, formData = true) => {
   }
   return configs;
 };
-export const dataToQueryParameter = data => {
+export const dataToQueryParameter = (data: any) => {
   if (typeof data === 'object') {
     if (!Array.isArray(data)) {
       var params = '?';

@@ -8,14 +8,19 @@ import InputField from '../../Components/InputField';
 import { generalImages } from '../../Assets/images';
 import GradientButton from '../../Components/GradientButton';
 import ResponsePopup from '../../Components/Popups/ResponsePopup';
-import TouchableInput from '../../Components/TouchableInput';
+import {TouchableInput} from '../../Components/TouchableInput';
 import ChangeStatusPopup from '../../Components/Popups/ChangeStatusPopup';
 import { useCreateTodoHook } from '../../hooks/useCreateTodoHook';
 import { isBlank } from '../../Utils/helper';
 import { showToast } from '../../Api/HelperFunction';
 import { useEditTodoHook } from '../../hooks/useEditTodoHook';
 
-const AddTodoScreen = (props) => {
+interface Props {
+  navigation: any,
+  route: any
+}
+
+const AddTodoScreen = (props: Props) => {
   const taskDetail = props?.route?.params?.taskDetail;
   const [title, setTitle] = useState(taskDetail?.title || '');
   const [description, setDescription] = useState(taskDetail?.description || '');
@@ -23,8 +28,8 @@ const AddTodoScreen = (props) => {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [isDate, setIsDate] = useState(false);
-  const generalModalRef = useRef();
-  const setStatusRef = useRef();
+  const generalModalRef = useRef<any>();
+  const setStatusRef = useRef<any>();
   const [createTodoState, createTodoFunc] = useCreateTodoHook();
   const [editTodoState, editTodoFunc] = useEditTodoHook();
 
@@ -138,7 +143,6 @@ const AddTodoScreen = (props) => {
         reference={generalModalRef}
         title={'Task Added'}
         subTitle={taskDetail ? 'Your Task Has Been Updated Successfully!' : 'Your Task Has Been Added Successfully!'}
-        image={generalImages.messageSent}
         primaryTitle={'OK'}
         onAccept={handleOnAccept}
       />

@@ -11,10 +11,15 @@ import MainButton from '../../Components/MainButton';
 import { colors } from '../../Utils/theme';
 import { clearTaskHistory } from '../../redux/actions/todoActions';
 
-const ViewHistoryScreen = ({navigation}) => {
+interface Props {
+    navigation: any,
+    route: any
+}
+
+const ViewHistoryScreen = ({navigation}: Props) => {
     const dispatch = useDispatch();
-    const todoData = useSelector(state => state.todoReducer.undoHistory);
-    const [task, setTask] = useState();
+    const todoData = useSelector((state: any) => state.todoReducer.undoHistory);
+    const [task, setTask] = useState<any>();
     const [taskID, setTaskID] = useState();
     const alertPopupRef = useRef();
     const alertPopupRef2 = useRef();
@@ -34,7 +39,7 @@ const ViewHistoryScreen = ({navigation}) => {
     useFocusEffect(
         useCallback(() => {
             if(todoData){
-                setTask(todoData?.filter((item) => item?.status === 'todo'))
+                setTask(todoData?.filter((item: any) => item?.status === 'todo'))
             }
         }, [navigation, todoData])
     );
@@ -44,7 +49,7 @@ const ViewHistoryScreen = ({navigation}) => {
         dispatch(clearTaskHistory());
     }
 
-    const renderCard = ({item, index}) => {
+    const renderCard = ({item, index}: any) => {
         return(
             <TodoCard 
                 history
@@ -91,13 +96,11 @@ const ViewHistoryScreen = ({navigation}) => {
             />
             <AlertPopup
                 reference={alertPopupRef2}
-                title={'Clear History'}
                 subTitle={'Are You Sure You Want To Clear Task History?'}
                 secondaryTitle={'No'}
                 primaryTitle={'Yes'}
                 onAccept={clearHistory}
             />
-
         </View>
     );
 }

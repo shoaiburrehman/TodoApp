@@ -4,12 +4,16 @@ import {ActivityIndicator, Modal, View} from 'react-native';
 import { vh, vw } from '../../Utils/units';
 import { colors } from '../../Utils/theme';
 
-const Loader = props => {
+interface Props {
+  loading: boolean,
+}
+
+const Loader = (props: Props) => {
   let isLoading;
   if (props?.loading) {
     isLoading = props?.loading;
   } else {
-    isLoading = useSelector(state => state.todoReducer.loading);
+    isLoading = useSelector((state: any) => state.todoReducer.loading);
   }
   return (
     <Modal

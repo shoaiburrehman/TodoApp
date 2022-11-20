@@ -1,9 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
         "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
@@ -16,20 +12,16 @@
         "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "com.todoapp-merged_res-30:/mipmap-xxxhdpi_logo.png.flat",
+        "source": "com.todoapp-main-32:/mipmap-xxxhdpi/logo.png"
     },
     {
-        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-ldpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-ldpi\\ic_launcher.png"
+        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "com.todoapp-merged_res-30:/layout_launch_screen.xml.flat",
@@ -38,6 +30,50 @@
     {
         "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-ldpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-ldpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.todoapp-merged_res-30:/mipmap-xxhdpi_logo.png.flat",
+        "source": "com.todoapp-main-32:/mipmap-xxhdpi/logo.png"
+    },
+    {
+        "merged": "com.todoapp-merged_res-30:/drawable_background_splash.xml.flat",
+        "source": "com.todoapp-main-32:/drawable/background_splash.xml"
+    },
+    {
+        "merged": "com.todoapp-merged_res-30:/mipmap-mdpi_logo.png.flat",
+        "source": "com.todoapp-main-32:/mipmap-mdpi/logo.png"
+    },
+    {
+        "merged": "com.todoapp-merged_res-30:/mipmap-xhdpi_logo.png.flat",
+        "source": "com.todoapp-main-32:/mipmap-xhdpi/logo.png"
     },
     {
         "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\layout_launch_screen.xml.flat",
@@ -50,14 +86,6 @@
     {
         "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
-    },
-    {
-        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-mdpi_ic_launcher_round.png.flat",
@@ -76,15 +104,11 @@
         "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "com.todoapp-merged_res-30:/mipmap-hdpi_logo.png.flat",
+        "source": "com.todoapp-main-32:/mipmap-hdpi/logo.png"
+    },
+    {
         "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\drawable_background_splash.xml.flat",
         "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\drawable\\background_splash.xml"
-    },
-    {
-        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-merged_res-30:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\ESHOP\\.gradle\\daemon\\7.5.1\\com.todoapp-main-32:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     }
 ]

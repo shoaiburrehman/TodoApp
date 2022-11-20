@@ -3,7 +3,7 @@ import fonts from '../../Assets/fonts';
 import {appShadow, colors} from '../../Utils/theme';
 import {fontSizes, vh, vw} from '../../Utils/units';
 
-export default styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     marginVertical: vh * 1.5,
   },
@@ -48,3 +48,5 @@ export default styles = StyleSheet.create({
     color: colors.lightRed,
   },
 });
+
+export default styles;

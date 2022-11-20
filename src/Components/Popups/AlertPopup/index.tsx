@@ -9,8 +9,16 @@ import GradientButton from '../../GradientButton';
 import MainButton from '../../MainButton';
 import MontBook from '../../TextWrappers/MontBook';
 
-const AlertPopup = props => {
-  let accountPopup = useRef(null);
+interface Props {
+  reference: any,
+  onAccept?: () => void,
+  subTitle: string,
+  primaryTitle: string,
+  secondaryTitle: string,
+}
+
+const AlertPopup = (props: Props) => {
+  let accountPopup = useRef<any>();
 
   useImperativeHandle(props?.reference, () => ({
     hide: hide,
@@ -44,7 +52,7 @@ const AlertPopup = props => {
           />
         </TouchableOpacity>
 
-        <LinearGradient style={styles.circleView} colors={props.colors ? props.colors : props.secondary ? [colors.white, colors.white] : [colors.themeColor, colors.themeColor]}
+        <LinearGradient style={styles.circleView} colors={[colors.themeColor, colors.themeColor]}
           {...(
             { 
               useAngle: true, 
@@ -71,6 +79,7 @@ const AlertPopup = props => {
             onPress={() => onYes()}
           />
           <MainButton 
+            active
             text={props.secondaryTitle}
             style={[styles.leftButton]}
             textStyle={{color: colors.grayColor}}

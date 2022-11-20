@@ -12,9 +12,14 @@ import { useEditTodoHook } from '../../hooks/useEditTodoHook';
 import { showToast } from '../../Api/HelperFunction';
 import { isBlank } from '../../Utils/helper';
 
-const TodoDetailScreen = ({navigation, route}) => {
+interface Props {
+    navigation: any,
+    route: any
+}
+  
+const TodoDetailScreen = ({navigation, route}: Props) => {
     const taskDetail = route?.params?.item;
-    const alertPopupRef = useRef();
+    const alertPopupRef = useRef<any>();
     const [status, setStatus] = useState('')
     const [editTodoState, editTodoFunc] = useEditTodoHook();
 

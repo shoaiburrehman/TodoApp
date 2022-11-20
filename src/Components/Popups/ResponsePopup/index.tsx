@@ -10,8 +10,20 @@ import MontBold from '../../TextWrappers/MontBold';
 import GradientButton from '../../GradientButton';
 import MontBook from '../../TextWrappers/MontBook';
 
-const ResponsePopup = props => {
-  let accountPopup = useRef(null);
+interface Props {
+  reference: any,
+  noIcon: any,
+  handleOnSuccess?: () => void,
+  onAccept?: () => void,
+  subTitle: string,
+  title: string,
+  primaryTitle: string,
+  secondaryTitle: string,
+  setStatus: (text: string) => void
+}
+
+const ResponsePopup = (props: Props) => {
+  let accountPopup = useRef<any>(null);
 
   useImperativeHandle(props?.reference, () => ({
     hide: hide,
@@ -100,7 +112,6 @@ const styles = StyleSheet.create({
     width: vw * 26,
     height: vh * 4,
     marginHorizontal: vw * 3,
-    backgroundColor: colors.grayButton,
     borderWidth: 1,
     shadowColor: colors.black,
     shadowOffset: {
@@ -139,7 +150,6 @@ const styles = StyleSheet.create({
   circleView: {
     width: vw*16,
     height: vw*16,
-    backgroundColor: colors.primaryGreen,
     borderRadius: (vw*16)/2,
     alignItems: 'center',
     justifyContent: 'center',
