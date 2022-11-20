@@ -7,9 +7,10 @@ export const useDeleteTodoHook = () => {
   const dispatch = useDispatch();
   const [deleteTodoState, setDeleteTodo] = useState(null);
 
-  const deleteTodoFunc = useCallback((id) => {
+  const deleteTodoFunc = useCallback((id, undoTask) => {
     try {
-      dispatch(deleteTodo(id)).then(res => {
+      dispatch(deleteTodo(id, undoTask)).then(res => {
+        showToast('Task Removed Successfully!')
         setDeleteTodo(res);
       }).catch((e) => {
         showToast(e);

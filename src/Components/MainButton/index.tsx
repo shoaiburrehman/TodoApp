@@ -2,29 +2,21 @@ import React, { useState } from "react";
 import {
     Text,
     TouchableOpacity,
-    Image
+    Image,
+    View
 } from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
 import { colors } from "../../Utils/theme";
 import { vh } from "../../Utils/units";
 
 const MainButton = (props) => {
-
-    const [isIcon, setIcon] = useState(props.isIcon || false)
     
-    if(isIcon == true){
+    if(props?.active == false){
         return (
-            <TouchableOpacity style={props.style} onPress={props.onPress}>
-                <Image style={props.imgStyle} source={props.icon} />
-            </TouchableOpacity>
-        );
-    }
-    if(props.text === "+"){
-        return (
-            <TouchableOpacity style={props.style} onPress={props.onPress}>
+            <View style={props.style}>
                 <Text style={props.textStyle}>{props.text}</Text>
-            </TouchableOpacity>
-        )            
+            </View>
+        );
     }
     else{
         return (

@@ -3,16 +3,11 @@ import {
   TouchableOpacity,
   Image,
   View,
-  ImageBackground,
-  StatusBar,
 } from 'react-native';
-import {DrawerActions} from '@react-navigation/native';
 import {vw, vh} from '../../Utils/units';
 import styles from './styles';
 import MontBold from '../../Components/TextWrappers/MontBold';
-import {drawerIcons, drawerIconsWithoutSignIn, generalIcons, generalImages, sampleImages} from '../../Assets/images';
-import {colors} from '../../Utils/theme';
-import MontRegular from '../../Components/TextWrappers/MontRegular';
+import {generalIcons, generalImages, sampleImages} from '../../Assets/images';
 
 const shouldHeaderBeShown = activeRouteName => {
   switch (activeRouteName) {
@@ -31,7 +26,8 @@ const getTitle = (activeRouteName, props) => {
 const showLeftButton = (activeRouteName, navigation, route) => {
   if (
     activeRouteName === 'Task Detail' ||
-    activeRouteName === 'Edit Task'
+    activeRouteName === 'Edit Task' ||
+    activeRouteName === 'Task History'
   ) {
     return (
       <TouchableOpacity
@@ -82,70 +78,7 @@ const showHeaderRight = (activeRouteName, navigation, route) => {
     }
   };
 
-  if (
-    activeRouteName === 'HomeScreen' ||
-    activeRouteName === 'Products listings' ||
-    activeRouteName === 'Categories' ||
-    activeRouteName === 'Category' ||
-    activeRouteName === 'My Wishlist' ||
-    activeRouteName === 'SearchScreen' ||
-    activeRouteName === 'PrivacyPolicy' ||
-    activeRouteName === 'MyFanRequestScreen' ||
-    activeRouteName === 'SubscriptionPlanScreen' ||
-    activeRouteName === 'SubscriptionPlanScreen2'
-  ) {
-    return (
-      <View style={[styles.row, styles.center]}>
-        <TouchableOpacity
-          onPress={() => {
-            console.log('onPress')
-            navigation.navigate('ProfileNavigator');
-            // DrawerActions.toggleDrawer()
-            //navigation.dispatch(DrawerActions.toggleDrawer());
-          }}
-          style={styles.onlineView}>
-          <Image source={sampleImages.profilePic} style={styles.userIcon} />
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-  if (activeRouteName === 'ProductDetail') {
-    return (
-      <TouchableOpacity
-        style={styles.rightContainer}
-        onPress={() => {
-          console.log('ProductDetail area');
-        }}>
-        {/* <Image source={icons.likeBlank2} style={styles.likeBlank} /> */}
-      </TouchableOpacity>
-    );
-  }
-
-  if (
-    activeRouteName === 'VerificationCode' ||
-    activeRouteName === 'ResetPassword'
-  )
-    return (
-      <TouchableOpacity onPress={() => navigation.navigate('AddressNavigator')}>
-        {/* <Image source={icons.bell} style={styles.notificationIcon} /> */}
-      </TouchableOpacity>
-    );
-
-  if (
-    activeRouteName === 'BookedSessions' ||
-    activeRouteName === 'RecentEvents' ||
-    activeRouteName === 'MyProgress' ||
-    activeRouteName === 'FitnessSessions'
-  ) {
-    return (
-      <TouchableOpacity onPress={handleOnFilter}>
-        {/* <Image source={icons.filter} style={styles.filterIcon} /> */}
-      </TouchableOpacity>
-    );
-  }
-
-  if (activeRouteName === 'Message') {
+  if (activeRouteName === 'Screen Name') {
     return (
       <TouchableOpacity onPress={handleOnPressThreeDots}>
         {/* <Image source={icons.threeDots} style={styles.notificationIcon} /> */}

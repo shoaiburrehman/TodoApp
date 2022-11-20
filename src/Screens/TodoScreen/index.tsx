@@ -9,12 +9,17 @@ import { useFocusEffect } from '@react-navigation/native';
 import { useGetTodoHook } from '../../hooks/useGetTodoHook';
 import { useDeleteTodoHook } from '../../hooks/useDeleteTodoHook';
 import EmptyList from '../../Components/EmptyList';
+import { styles } from './styles';
+import GradientButton from '../../Components/GradientButton';
+import MainButton from '../../Components/MainButton';
+import { colors } from '../../Utils/theme';
 
 const TodoScreen = ({navigation}) => {
     const todoData = useSelector(state => state.todoReducer.todoList);
     const [task, setTask] = useState();
     const [refreshing, setRefreshing] = useState(false);
     const [taskID, setTaskID] = useState();
+    const [undoActive, setUndoActive] = useState(false);
     
     const [todoState, todoFunc] = useGetTodoHook();
     const [deleteTodoState, deleteTodoFunc] = useDeleteTodoHook(); 
@@ -38,6 +43,14 @@ const TodoScreen = ({navigation}) => {
         }
     }, [todoData])
 
+    useEffect(() => {
+        if(task && task?.length > 0){
+            setUndoActive(true);
+        } else {
+            setUndoActive(false);
+        }
+    }, [task])
+
     const onRefresh = () => {
         setRefreshing(true);
         todoFunc();
@@ -45,27 +58,16 @@ const TodoScreen = ({navigation}) => {
             setRefreshing(false);
         });
     }
-    
-    // const createTodo = async() => {
-    //     let data = {
-    //         createdAt: 1667103624, 
-    //         deadline: "deadline 3", 
-    //         description: "description 3", 
-    //         id: "3", 
-    //         status: "status 3", 
-    //         title: "title 3"
-    //     }
-    //     try {
-    //         const response = await post(data);
-    //         console.log('response: ', response)
-    //     } catch (error) {
-    //         showToast(error)
-    //     }
-    // }
+
+    const handleUndo = () => {
+        console.log('Last Task: ', task[task.length - 1])
+        deleteTodoFunc(task[task.length - 1]?.id, task[task.length - 1])
+    }
 
     const renderCard = ({item, index}) => {
         return(
             <TodoCard 
+                history={false}
                 item={item} 
                 index={index} 
                 ref={alertPopupRef} 
@@ -81,7 +83,27 @@ const TodoScreen = ({navigation}) => {
         )
     }
 
-    console.log('task: ', task)
+    const renderHeader = () => {
+        return(
+            <View style={styles.buttonsRow}>
+                <GradientButton
+                    text={"View History"}
+                    style={styles.button}
+                    textStyle={{color: colors.white}}
+                    onPress={() => navigation?.navigate('Task History')}
+                />
+                <MainButton 
+                    active={undoActive}
+                    text={"Undo Task"}
+                    style={undoActive  ? styles.leftButton : styles.inActiveLeftBtn}
+                    textStyle={{color: undoActive ? colors.black : colors.white}}
+                    onPress={handleUndo}
+                />
+            </View>
+        )
+    }
+
+    console.log('undoActive: ', undoActive)
     return (
         <View style={MainStyle.container}>
             <FlatList
@@ -89,6 +111,7 @@ const TodoScreen = ({navigation}) => {
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
                 }
+                ListHeaderComponent={renderHeader}
                 ListEmptyComponent={renderEmptyList}
                 renderItem={renderCard}
                 showsVerticalScrollIndicator={false}

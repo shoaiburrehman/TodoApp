@@ -1,4 +1,5 @@
 import { post, get, deleteTask, put } from '../../Api';
+import { wait } from '../../Api/HelperFunction';
 import actionsTypes from '../types';
 
 export const todoList = () => {
@@ -57,7 +58,7 @@ export const createTodo = (data) => {
   };
 };
 
-export const deleteTodo = (id) => {
+export const deleteTodo = (id, undoTask) => {
   return async dispatch => {
     return new Promise((resolve, reject) => {
       setTimeout(async () => {
@@ -68,10 +69,15 @@ export const deleteTodo = (id) => {
           const response = await deleteTask(id);
           dispatch({
             type: actionsTypes.deleteTodo,
-            // payload: {
-            //   todoList: response,
-            // },
           });
+          if(undoTask){
+            dispatch({
+              type: actionsTypes.undoTask,
+              payload: {
+                undoHistory: undoTask,
+              },  
+            });
+          }
           resolve(response);
         } catch (error) {
           reject(error);
@@ -106,6 +112,31 @@ export const editTodo = (data, id) => {
         } finally {
           dispatch({
             type: actionsTypes.loaderOff,
+          });
+        }
+      }, 300);
+    });
+  };
+};
+
+export const clearTaskHistory = () => {
+  return async dispatch => {
+    return new Promise((resolve, reject) => {
+      setTimeout(async () => {
+        dispatch({
+          type: actionsTypes.loaderOn,
+        });
+        try {
+          dispatch({
+            type: actionsTypes.clearHistory,
+          });
+        } catch (error) {
+          reject(error);
+        } finally {
+          wait(500).then(() => {
+            dispatch({
+              type: actionsTypes.loaderOff,
+            });
           });
         }
       }, 300);

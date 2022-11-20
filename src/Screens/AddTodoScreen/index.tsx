@@ -79,6 +79,7 @@ const AddTodoScreen = (props) => {
     } else {
       setTitle('');
       setDescription('');
+      props?.navigation.navigate('HomeNavigator')
     }
   }
 

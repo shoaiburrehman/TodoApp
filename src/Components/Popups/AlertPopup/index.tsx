@@ -9,6 +9,7 @@ import { appShadow, colors } from '../../../Utils/theme';
 import MontBold from '../../TextWrappers/MontBold';
 import GradientButton from '../../GradientButton';
 import MainButton from '../../MainButton';
+import MontBook from '../../TextWrappers/MontBook';
 
 const AlertPopup = props => {
   let accountPopup = useRef(null);
@@ -62,7 +63,7 @@ const AlertPopup = props => {
           {/* <Image source={generalImages.checkWhite} style={styles.check} /> */}
         </LinearGradient>
 
-        <MontBold style={styles.details}>{props.subTitle}</MontBold>
+        <MontBook style={styles.details}>{props.subTitle}</MontBook>
 
         <View style={styles.buttonsRow}>
           <GradientButton
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: vh * 2,
     width: vw * 60,
-    fontSize: fontSizes.f20
+    fontSize: fontSizes.f18
   },
   buttonsRow: {
     flexDirection: 'row',

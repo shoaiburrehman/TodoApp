@@ -4,6 +4,7 @@ import BottomTabNavigator from '../BottomTabNavigator/BottomTabNavigator';
 import TodoDetailScreen from '../../Screens/TodoDetailScreen';
 import { options } from '../NavigationHeader';
 import AddTodoScreen from '../../Screens/AddTodoScreen';
+import ViewHistoryScreen from '../../Screens/ViewHistoryScreen';
 
 const RootStack = createStackNavigator();
 
@@ -13,6 +14,7 @@ const MainNavigator = () => {
       <RootStack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
       <RootStack.Screen name="Task Detail" component={TodoDetailScreen} options={options} />
       <RootStack.Screen name="Edit Task" component={AddTodoScreen} options={options} />
+      <RootStack.Screen name="Task History" component={ViewHistoryScreen} options={options} />
     </RootStack.Navigator>
   );
 };

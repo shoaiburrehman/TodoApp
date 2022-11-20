@@ -12,7 +12,7 @@ import MontRegular from '../../Components/TextWrappers/MontRegular';
 import MontExtraLight from '../../Components/TextWrappers/MontExtraLight';
 import AlertPopup from '../../Components/Popups/AlertPopup';
 
-const TodoCard = React.forwardRef(({item, index, setTaskID, navigation}, ref) => {
+const TodoCard = React.forwardRef(({item, index, setTaskID, navigation, history}, ref) => {
 
     return(
         <Animatable.View animation="fadeInLeft" duration={1000} iterationDelay={200 * index}>
@@ -26,17 +26,19 @@ const TodoCard = React.forwardRef(({item, index, setTaskID, navigation}, ref) =>
                         <MontHeavy numberOfLines={2} style={styles.title}>{item.title}</MontHeavy>
                         <MontExtraLight style={styles.deadlineTxt}>Status: {item.status}</MontExtraLight>
                     </View>
-                    <View style={styles.row}>
-                        <TouchableOpacity style={styles.touchableEdit} onPress={() => navigation?.navigate('Edit Task', {taskDetail: item})}>
-                            <Feather name="edit" color={colors.themeColor} size={18.5}/>
-                        </TouchableOpacity>
-                        <TouchableOpacity 
-                            onPress={() => {setTaskID(item?.id); ref?.current?.show()}} 
-                            style={styles.imgEditPencil}
-                        >
-                            <Icon name="trash-outline" color={colors.themeColor} size={18.5}/>
-                        </TouchableOpacity>
-                    </View>
+                    {history === false &&
+                        <View style={styles.row}>
+                            <TouchableOpacity style={styles.touchableEdit} onPress={() => navigation?.navigate('Edit Task', {taskDetail: item})}>
+                                <Feather name="edit" color={colors.themeColor} size={18.5}/>
+                            </TouchableOpacity>
+                            <TouchableOpacity 
+                                onPress={() => {setTaskID(item?.id); ref?.current?.show()}} 
+                                style={styles.imgEditPencil}
+                            >
+                                <Icon name="trash-outline" color={colors.themeColor} size={18.5}/>
+                            </TouchableOpacity>
+                        </View>
+                    }
                 </View>
                 <View style={styles.descView}>
                     <MontRegular numberOfLines={5} style={styles.desc}>{item.description}</MontRegular>

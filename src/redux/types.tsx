@@ -3,6 +3,8 @@ const actionTypes = {
     createTodo: 'CREATE_TODO',
     editTodo: 'EDIT_TODO',
     deleteTodo: 'DELETE_TODO',
+    undoTask: 'UNDO_TASK',
+    clearHistory: 'CLEAR_HISTORY',
     loaderOn: 'LOADER_ON',
     loaderOff: 'LOADER_OFF'
 }

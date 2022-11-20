@@ -49,6 +49,7 @@ const DoingTodoScreen = ({navigation}) => {
     const renderCard = ({item, index}) => {
         return(
             <TodoCard 
+                history={false}
                 item={item} 
                 index={index} 
                 ref={alertPopupRef} 

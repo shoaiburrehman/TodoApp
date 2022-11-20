@@ -8,6 +8,7 @@ import {useImperativeHandle} from 'react';
 import { appShadow, colors } from '../../../Utils/theme';
 import MontBold from '../../TextWrappers/MontBold';
 import GradientButton from '../../GradientButton';
+import MontBook from '../../TextWrappers/MontBook';
 
 const ResponsePopup = props => {
   let accountPopup = useRef(null);
@@ -64,7 +65,7 @@ const ResponsePopup = props => {
 
           <MontBold style={styles.heading}>{props?.title}</MontBold>
         }
-        <MontBold style={styles.details}>{props.subTitle}</MontBold>
+        <MontBook style={styles.details}>{props.subTitle}</MontBook>
 
         <View style={styles.buttonsRow}>
           <GradientButton
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: vh * 2,
     width: vw * 60,
-    fontSize: fontSizes.f20
+    fontSize: fontSizes.f18
   },
   buttonsRow: {
     justifyContent: 'center',
