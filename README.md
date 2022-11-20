@@ -6,7 +6,7 @@ This is a simple Todo App, developed in React Native. Features Incude:
 4. Showcases of the CRUD Operations.
 
 ## To Run This App
-* Make sure your [React Native Environment](https://reactnative.dev/docs/environment-setup) is Setup and `React Native CLI` installed.
+* Make sure your [React Native Environment](https://reactnative.dev/docs/environment-setup) already setup with `React Native CLI`.
 * Clone this repository and switched to **beta** branch for the updated code.
 * Then, run `npm install` on your project root folder.
 * After installing all the dependencies. Run `npm run android`, it will launch your Application.
