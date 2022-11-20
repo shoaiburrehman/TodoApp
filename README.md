@@ -1,9 +1,9 @@
 # Todo App
-This is a simple Todo App developed in React Native. Features Incude:
+This is a simple Todo App, developed in React Native. Features Incude:
 1. Manage your Tasks.
 2. Change Status of the Task.
 3. Manage Task History.
-4. Showcases the CRUD Operations.
+4. Showcases of the CRUD Operations.
 
 ## To Run This App
 * Make sure your [React Native Environment](https://reactnative.dev/docs/environment-setup) is Setup and `React Native CLI` installed.
