@@ -1,11 +1,19 @@
 [
     {
+        "merged": "com.todoapp-merged_res-29:/mipmap-xxxhdpi_logo.png.flat",
+        "source": "com.todoapp-main-30:/mipmap-xxxhdpi/logo.png"
+    },
+    {
         "merged": "com.todoapp-merged_res-29:/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "com.todoapp-main-30:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "com.todoapp-merged_res-29:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.todoapp-main-30:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.todoapp-merged_res-29:/mipmap-hdpi_logo.png.flat",
+        "source": "com.todoapp-main-30:/mipmap-hdpi/logo.png"
     },
     {
         "merged": "com.todoapp-merged_res-29:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
@@ -24,16 +32,20 @@
         "source": "com.todoapp-main-30:/drawable/rn_edit_text_material.xml"
     },
     {
+        "merged": "com.todoapp-merged_res-29:/mipmap-xhdpi_logo.png.flat",
+        "source": "com.todoapp-main-30:/mipmap-xhdpi/logo.png"
+    },
+    {
         "merged": "com.todoapp-merged_res-29:/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "com.todoapp-main-30:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.todoapp-merged_res-29:/drawable-mdpi_src_assets_images_generalicons_arrowback.png.flat",
-        "source": "com.todoapp-react-24:/drawable-mdpi/src_assets_images_generalicons_arrowback.png"
-    },
-    {
         "merged": "com.todoapp-merged_res-29:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
         "source": "com.todoapp-react-24:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.todoapp-merged_res-29:/drawable-mdpi_src_assets_images_generalicons_arrowback.png.flat",
+        "source": "com.todoapp-react-24:/drawable-mdpi/src_assets_images_generalicons_arrowback.png"
     },
     {
         "merged": "com.todoapp-merged_res-29:/mipmap-hdpi_ic_launcher.png.flat",
@@ -50,6 +62,10 @@
     {
         "merged": "com.todoapp-merged_res-29:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "com.todoapp-main-30:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.todoapp-merged_res-29:/mipmap-mdpi_logo.png.flat",
+        "source": "com.todoapp-main-30:/mipmap-mdpi/logo.png"
     },
     {
         "merged": "com.todoapp-merged_res-29:/mipmap-xhdpi_ic_launcher.png.flat",
@@ -88,10 +104,6 @@
         "source": "com.todoapp-react-24:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.todoapp-merged_res-29:/drawable-mdpi_src_assets_images_generalimages_messagesent.png.flat",
-        "source": "com.todoapp-react-24:/drawable-mdpi/src_assets_images_generalimages_messagesent.png"
-    },
-    {
         "merged": "com.todoapp-merged_res-29:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
         "source": "com.todoapp-react-24:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
@@ -114,6 +126,10 @@
     {
         "merged": "com.todoapp-merged_res-29:/mipmap-mdpi_ic_launcher.png.flat",
         "source": "com.todoapp-main-30:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.todoapp-merged_res-29:/mipmap-xxhdpi_logo.png.flat",
+        "source": "com.todoapp-main-30:/mipmap-xxhdpi/logo.png"
     },
     {
         "merged": "com.todoapp-merged_res-29:/drawable-mdpi_src_assets_images_generalimages_logo.png.flat",

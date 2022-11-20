@@ -1436,7 +1436,6 @@ drawable rn_edit_text_material
 drawable spinner_dropdown_background
 drawable src_assets_images_generalicons_arrowback
 drawable src_assets_images_generalimages_logo
-drawable src_assets_images_generalimages_messagesent
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -1936,6 +1935,7 @@ menu example_menu2
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+mipmap logo
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description

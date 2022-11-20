@@ -55,20 +55,14 @@ const ChangeStatusPopup = React.forwardRef((props: Props, ref) => {
           <View style={styles.marginTop}>
             {statusList.map((item, index) => {
               return(
-                <>
-                  <TouchableOpacity key={index} style={styles.touchableSelect} onPress={() => {handleOnSuccess(item?.text)}}>
+                <View key={index}>
+                  <TouchableOpacity style={styles.touchableSelect} onPress={() => {handleOnSuccess(item?.text)}}>
                     <MontRegular style={styles.touchableText}>{item?.text}</MontRegular>
                   </TouchableOpacity>
                   {index !== statusList?.length - 1 &&
                     <View style={styles.underline} />
                   }
-                </>
-                // <RadioButtonComponent 
-                //   uniqKey={item.label} 
-                //   text={item.text} 
-                //   setRadioVal={setRadioVal} 
-                //   radioVal={radioVal}
-                // />
+                </View>
               )
               })
             }
